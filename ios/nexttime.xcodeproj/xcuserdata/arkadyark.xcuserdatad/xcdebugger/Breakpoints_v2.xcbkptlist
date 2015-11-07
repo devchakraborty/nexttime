@@ -42,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "nexttime/Reminder.swift"
-            timestampString = "468577428.685627"
+            timestampString = "468602652.057906"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "53"
-            endingLineNumber = "53"
+            startingLineNumber = "54"
+            endingLineNumber = "54"
             landmarkName = "init(coder:)"
             landmarkType = "5">
          </BreakpointContent>

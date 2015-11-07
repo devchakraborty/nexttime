@@ -11,14 +11,17 @@
 		88B41E0F1BEDB6F4000C24DE /* Reminder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B41E0E1BEDB6F4000C24DE /* Reminder.swift */; };
 		88B41E111BEDBC5E000C24DE /* WithClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B41E101BEDBC5E000C24DE /* WithClient.swift */; };
 		88B41E131BEDBCE0000C24DE /* ReminderClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B41E121BEDBCE0000C24DE /* ReminderClient.swift */; };
-		AF80A385222C3F9FBC24BAF2 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FCF7E9B4DD011B8CFC4F2F4 /* Pods.framework */; };
+		88E11E8F1BEE748100EC3B0F /* Friend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E11E8B1BEE748100EC3B0F /* Friend.swift */; };
+		88E11E901BEE748100EC3B0F /* FriendsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E11E8C1BEE748100EC3B0F /* FriendsDataSource.swift */; };
+		88E11E911BEE748100EC3B0F /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E11E8D1BEE748100EC3B0F /* Place.swift */; };
+		88E11E921BEE748100EC3B0F /* PlacesDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E11E8E1BEE748100EC3B0F /* PlacesDataSource.swift */; };
+		A1628EA31BEE572A008F6BC7 /* LoginClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1628EA21BEE572A008F6BC7 /* LoginClient.swift */; };
+		A1628EB21BEE5ED6008F6BC7 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1628EB01BEE5ED5008F6BC7 /* FBSDKCoreKit.framework */; };
+		A1628EB31BEE5ED6008F6BC7 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1628EB11BEE5ED6008F6BC7 /* FBSDKLoginKit.framework */; };
+		A1628EB51BEE5F10008F6BC7 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1628EB41BEE5F10008F6BC7 /* FBSDKShareKit.framework */; };
 		D726DA991BEDD8A7001A9E6E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D726DA981BEDD8A7001A9E6E /* LoginViewController.swift */; };
 		D726DA9B1BEDD93E001A9E6E /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D726DA9A1BEDD93E001A9E6E /* ListViewController.swift */; };
 		D726DA9D1BEDE1B8001A9E6E /* ListViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D726DA9C1BEDE1B8001A9E6E /* ListViewCell.swift */; };
-		D79FBA1B1BEE3C3A00534B93 /* PlacesDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = D79FBA1A1BEE3C3A00534B93 /* PlacesDataSource.swift */; };
-		D79FBA1D1BEE405600534B93 /* FriendsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = D79FBA1C1BEE405600534B93 /* FriendsDataSource.swift */; };
-		D79FBA1F1BEE408F00534B93 /* Friend.swift in Sources */ = {isa = PBXBuildFile; fileRef = D79FBA1E1BEE408F00534B93 /* Friend.swift */; };
-		D79FBA231BEE447C00534B93 /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = D79FBA221BEE447C00534B93 /* Place.swift */; };
 		D7E19B291BEDACF900E6533D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7E19B281BEDACF900E6533D /* AppDelegate.swift */; };
 		D7E19B2B1BEDACF900E6533D /* SingleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7E19B2A1BEDACF900E6533D /* SingleViewController.swift */; };
 		D7E19B2E1BEDACF900E6533D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7E19B2C1BEDACF900E6533D /* Main.storyboard */; };
@@ -28,20 +31,21 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		3FCF7E9B4DD011B8CFC4F2F4 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		4AE09C84518A5F87562C8625 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
-		7836193807BC60A3F2A2946A /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		88B41E0C1BEDB57E000C24DE /* NearClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NearClient.swift; path = ../NearClient.swift; sourceTree = "<group>"; };
 		88B41E0E1BEDB6F4000C24DE /* Reminder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reminder.swift; sourceTree = "<group>"; };
 		88B41E101BEDBC5E000C24DE /* WithClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WithClient.swift; sourceTree = "<group>"; };
 		88B41E121BEDBCE0000C24DE /* ReminderClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReminderClient.swift; sourceTree = "<group>"; };
+		88E11E8B1BEE748100EC3B0F /* Friend.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Friend.swift; sourceTree = "<group>"; };
+		88E11E8C1BEE748100EC3B0F /* FriendsDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendsDataSource.swift; sourceTree = "<group>"; };
+		88E11E8D1BEE748100EC3B0F /* Place.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
+		88E11E8E1BEE748100EC3B0F /* PlacesDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlacesDataSource.swift; sourceTree = "<group>"; };
+		A1628EA21BEE572A008F6BC7 /* LoginClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginClient.swift; sourceTree = "<group>"; };
+		A1628EB01BEE5ED5008F6BC7 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = ../../../../../../Documents/FacebookSDK/FBSDKCoreKit.framework; sourceTree = "<group>"; };
+		A1628EB11BEE5ED6008F6BC7 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = ../../../../../../Documents/FacebookSDK/FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		A1628EB41BEE5F10008F6BC7 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKShareKit.framework; path = ../../../../../../Documents/FacebookSDK/FBSDKShareKit.framework; sourceTree = "<group>"; };
 		D726DA981BEDD8A7001A9E6E /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		D726DA9A1BEDD93E001A9E6E /* ListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		D726DA9C1BEDE1B8001A9E6E /* ListViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListViewCell.swift; sourceTree = "<group>"; };
-		D79FBA1A1BEE3C3A00534B93 /* PlacesDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlacesDataSource.swift; sourceTree = "<group>"; };
-		D79FBA1C1BEE405600534B93 /* FriendsDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendsDataSource.swift; sourceTree = "<group>"; };
-		D79FBA1E1BEE408F00534B93 /* Friend.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Friend.swift; sourceTree = "<group>"; };
-		D79FBA221BEE447C00534B93 /* Place.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
 		D7E19B251BEDACF900E6533D /* nexttime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = nexttime.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7E19B281BEDACF900E6533D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D7E19B2A1BEDACF900E6533D /* SingleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleViewController.swift; sourceTree = "<group>"; };
@@ -57,20 +61,31 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AF80A385222C3F9FBC24BAF2 /* Pods.framework in Frameworks */,
+				A1628EB31BEE5ED6008F6BC7 /* FBSDKLoginKit.framework in Frameworks */,
+				A1628EB21BEE5ED6008F6BC7 /* FBSDKCoreKit.framework in Frameworks */,
+				A1628EB51BEE5F10008F6BC7 /* FBSDKShareKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A1628EAB1BEE5E4F008F6BC7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A1628EB41BEE5F10008F6BC7 /* FBSDKShareKit.framework */,
+				A1628EB01BEE5ED5008F6BC7 /* FBSDKCoreKit.framework */,
+				A1628EB11BEE5ED6008F6BC7 /* FBSDKLoginKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		D7E19B1C1BEDACF900E6533D = {
 			isa = PBXGroup;
 			children = (
+				A1628EAB1BEE5E4F008F6BC7 /* Frameworks */,
 				D7E19B271BEDACF900E6533D /* nexttime */,
 				D7E19B261BEDACF900E6533D /* Products */,
-				E40BDBE2830C25CF26B205D0 /* Pods */,
-				ECEDE7FC17C7AC90248A0C65 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -85,6 +100,10 @@
 		D7E19B271BEDACF900E6533D /* nexttime */ = {
 			isa = PBXGroup;
 			children = (
+				88E11E8B1BEE748100EC3B0F /* Friend.swift */,
+				88E11E8C1BEE748100EC3B0F /* FriendsDataSource.swift */,
+				88E11E8D1BEE748100EC3B0F /* Place.swift */,
+				88E11E8E1BEE748100EC3B0F /* PlacesDataSource.swift */,
 				88B41E0C1BEDB57E000C24DE /* NearClient.swift */,
 				88B41E0E1BEDB6F4000C24DE /* Reminder.swift */,
 				D7E19B281BEDACF900E6533D /* AppDelegate.swift */,
@@ -99,29 +118,9 @@
 				88B41E101BEDBC5E000C24DE /* WithClient.swift */,
 				88B41E121BEDBCE0000C24DE /* ReminderClient.swift */,
 				D726DA981BEDD8A7001A9E6E /* LoginViewController.swift */,
-				D79FBA1A1BEE3C3A00534B93 /* PlacesDataSource.swift */,
-				D79FBA221BEE447C00534B93 /* Place.swift */,
-				D79FBA1C1BEE405600534B93 /* FriendsDataSource.swift */,
-				D79FBA1E1BEE408F00534B93 /* Friend.swift */,
+				A1628EA21BEE572A008F6BC7 /* LoginClient.swift */,
 			);
 			path = nexttime;
-			sourceTree = "<group>";
-		};
-		E40BDBE2830C25CF26B205D0 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				7836193807BC60A3F2A2946A /* Pods.debug.xcconfig */,
-				4AE09C84518A5F87562C8625 /* Pods.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
-		ECEDE7FC17C7AC90248A0C65 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				3FCF7E9B4DD011B8CFC4F2F4 /* Pods.framework */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -131,12 +130,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D7E19B3A1BEDACF900E6533D /* Build configuration list for PBXNativeTarget "nexttime" */;
 			buildPhases = (
-				EF0DEBD6609E62117F042222 /* Check Pods Manifest.lock */,
 				D7E19B211BEDACF900E6533D /* Sources */,
 				D7E19B221BEDACF900E6533D /* Frameworks */,
 				D7E19B231BEDACF900E6533D /* Resources */,
-				8A68AAF8331CCCE575C2FA47 /* Embed Pods Frameworks */,
-				7462B1806E8D983E10F30A15 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -194,73 +190,26 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		7462B1806E8D983E10F30A15 /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		8A68AAF8331CCCE575C2FA47 /* Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		EF0DEBD6609E62117F042222 /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
 		D7E19B211BEDACF900E6533D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D79FBA1D1BEE405600534B93 /* FriendsDataSource.swift in Sources */,
 				88B41E0D1BEDB57E000C24DE /* NearClient.swift in Sources */,
 				D7E19B2B1BEDACF900E6533D /* SingleViewController.swift in Sources */,
-				D79FBA231BEE447C00534B93 /* Place.swift in Sources */,
 				D726DA9D1BEDE1B8001A9E6E /* ListViewCell.swift in Sources */,
+				88E11E8F1BEE748100EC3B0F /* Friend.swift in Sources */,
 				88B41E111BEDBC5E000C24DE /* WithClient.swift in Sources */,
+				88E11E911BEE748100EC3B0F /* Place.swift in Sources */,
 				88B41E131BEDBCE0000C24DE /* ReminderClient.swift in Sources */,
+				88E11E921BEE748100EC3B0F /* PlacesDataSource.swift in Sources */,
 				D726DA991BEDD8A7001A9E6E /* LoginViewController.swift in Sources */,
+				A1628EA31BEE572A008F6BC7 /* LoginClient.swift in Sources */,
 				D726DA9B1BEDD93E001A9E6E /* ListViewController.swift in Sources */,
 				D7E19B311BEDACF900E6533D /* nexttime.xcdatamodeld in Sources */,
-				D79FBA1B1BEE3C3A00534B93 /* PlacesDataSource.swift in Sources */,
 				D7E19B291BEDACF900E6533D /* AppDelegate.swift in Sources */,
-				D79FBA1F1BEE408F00534B93 /* Friend.swift in Sources */,
 				88B41E0F1BEDB6F4000C24DE /* Reminder.swift in Sources */,
+				88E11E901BEE748100EC3B0F /* FriendsDataSource.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -369,7 +318,6 @@
 		};
 		D7E19B3B1BEDACF900E6533D /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7836193807BC60A3F2A2946A /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -383,7 +331,6 @@
 		};
 		D7E19B3C1BEDACF900E6533D /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4AE09C84518A5F87562C8625 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";

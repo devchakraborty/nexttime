@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "91E76BBA98729240D254010BA1472A7A0FAD1ECB",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "91E76BBA98729240D254010BA1472A7A0FAD1ECB" : 0,
+    "1C3895D903580DA785EC3F63C6B0A7329E92A23E" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "4213F267-F0F1-4F6C-9FF1-627CE3F07DC5",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "91E76BBA98729240D254010BA1472A7A0FAD1ECB" : "nexttime\/",
+    "1C3895D903580DA785EC3F63C6B0A7329E92A23E" : ""
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "nexttime",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "ios\/nexttime.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/tjadams\/babystep.me.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "1C3895D903580DA785EC3F63C6B0A7329E92A23E"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/devchakraborty\/nexttime.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "91E76BBA98729240D254010BA1472A7A0FAD1ECB"
+    }
+  ]
+}
