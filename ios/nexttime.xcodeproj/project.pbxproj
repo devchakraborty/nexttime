@@ -11,6 +11,10 @@
 		88B41E0F1BEDB6F4000C24DE /* Reminder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B41E0E1BEDB6F4000C24DE /* Reminder.swift */; };
 		88B41E111BEDBC5E000C24DE /* WithClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B41E101BEDBC5E000C24DE /* WithClient.swift */; };
 		88B41E131BEDBCE0000C24DE /* ReminderClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B41E121BEDBCE0000C24DE /* ReminderClient.swift */; };
+		88E11E8F1BEE748100EC3B0F /* Friend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E11E8B1BEE748100EC3B0F /* Friend.swift */; };
+		88E11E901BEE748100EC3B0F /* FriendsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E11E8C1BEE748100EC3B0F /* FriendsDataSource.swift */; };
+		88E11E911BEE748100EC3B0F /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E11E8D1BEE748100EC3B0F /* Place.swift */; };
+		88E11E921BEE748100EC3B0F /* PlacesDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E11E8E1BEE748100EC3B0F /* PlacesDataSource.swift */; };
 		A1628EA31BEE572A008F6BC7 /* LoginClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1628EA21BEE572A008F6BC7 /* LoginClient.swift */; };
 		A1628EB21BEE5ED6008F6BC7 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1628EB01BEE5ED5008F6BC7 /* FBSDKCoreKit.framework */; };
 		A1628EB31BEE5ED6008F6BC7 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1628EB11BEE5ED6008F6BC7 /* FBSDKLoginKit.framework */; };
@@ -31,6 +35,10 @@
 		88B41E0E1BEDB6F4000C24DE /* Reminder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reminder.swift; sourceTree = "<group>"; };
 		88B41E101BEDBC5E000C24DE /* WithClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WithClient.swift; sourceTree = "<group>"; };
 		88B41E121BEDBCE0000C24DE /* ReminderClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReminderClient.swift; sourceTree = "<group>"; };
+		88E11E8B1BEE748100EC3B0F /* Friend.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Friend.swift; sourceTree = "<group>"; };
+		88E11E8C1BEE748100EC3B0F /* FriendsDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendsDataSource.swift; sourceTree = "<group>"; };
+		88E11E8D1BEE748100EC3B0F /* Place.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
+		88E11E8E1BEE748100EC3B0F /* PlacesDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlacesDataSource.swift; sourceTree = "<group>"; };
 		A1628EA21BEE572A008F6BC7 /* LoginClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginClient.swift; sourceTree = "<group>"; };
 		A1628EB01BEE5ED5008F6BC7 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = ../../../../../../Documents/FacebookSDK/FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		A1628EB11BEE5ED6008F6BC7 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = ../../../../../../Documents/FacebookSDK/FBSDKLoginKit.framework; sourceTree = "<group>"; };
@@ -92,6 +100,10 @@
 		D7E19B271BEDACF900E6533D /* nexttime */ = {
 			isa = PBXGroup;
 			children = (
+				88E11E8B1BEE748100EC3B0F /* Friend.swift */,
+				88E11E8C1BEE748100EC3B0F /* FriendsDataSource.swift */,
+				88E11E8D1BEE748100EC3B0F /* Place.swift */,
+				88E11E8E1BEE748100EC3B0F /* PlacesDataSource.swift */,
 				88B41E0C1BEDB57E000C24DE /* NearClient.swift */,
 				88B41E0E1BEDB6F4000C24DE /* Reminder.swift */,
 				D7E19B281BEDACF900E6533D /* AppDelegate.swift */,
@@ -185,14 +197,18 @@
 				88B41E0D1BEDB57E000C24DE /* NearClient.swift in Sources */,
 				D7E19B2B1BEDACF900E6533D /* SingleViewController.swift in Sources */,
 				D726DA9D1BEDE1B8001A9E6E /* ListViewCell.swift in Sources */,
+				88E11E8F1BEE748100EC3B0F /* Friend.swift in Sources */,
 				88B41E111BEDBC5E000C24DE /* WithClient.swift in Sources */,
+				88E11E911BEE748100EC3B0F /* Place.swift in Sources */,
 				88B41E131BEDBCE0000C24DE /* ReminderClient.swift in Sources */,
+				88E11E921BEE748100EC3B0F /* PlacesDataSource.swift in Sources */,
 				D726DA991BEDD8A7001A9E6E /* LoginViewController.swift in Sources */,
 				A1628EA31BEE572A008F6BC7 /* LoginClient.swift in Sources */,
 				D726DA9B1BEDD93E001A9E6E /* ListViewController.swift in Sources */,
 				D7E19B311BEDACF900E6533D /* nexttime.xcdatamodeld in Sources */,
 				D7E19B291BEDACF900E6533D /* AppDelegate.swift in Sources */,
 				88B41E0F1BEDB6F4000C24DE /* Reminder.swift in Sources */,
+				88E11E901BEE748100EC3B0F /* FriendsDataSource.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

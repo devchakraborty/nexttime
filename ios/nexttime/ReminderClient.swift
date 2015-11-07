@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import CoreLocation
 
-class ReminderClient {
+class ReminderClient: NSObject, CLLocationManagerDelegate{
     static let DocumentsDirectory = NSFileManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask).first!
     static let ArchiveURL = DocumentsDirectory.URLByAppendingPathComponent("reminders")
     
@@ -16,18 +17,52 @@ class ReminderClient {
     
     var nearClient: NearClient
     var withClient: WithClient
+    var locationManager: CLLocationManager?
     
-    init() {
+    override init() {
         nearClient = NearClient()
         withClient = WithClient()
+        
+        super.init()
+        locationManager = initLocationManager()
+        locationManager!.startMonitoringSignificantLocationChanges()
         let reminders = NSKeyedUnarchiver.unarchiveObjectWithFile(ReminderClient.ArchiveURL.path!) as? [Reminder] ?? []
         for reminder in reminders {
             addReminder(reminder)
         }
     }
     
+    func initLocationManager()->CLLocationManager{
+        let newLocationManager = CLLocationManager()
+        let authStatus = CLLocationManager.authorizationStatus()
+        
+        if(authStatus == CLAuthorizationStatus.NotDetermined){
+            newLocationManager.requestAlwaysAuthorization()
+        }
+        newLocationManager.delegate = self
+        
+        
+        return newLocationManager
+    }
+    
     static func sharedClient()->ReminderClient {
         return shared
+    }
+    
+    // MARK: Delegate functions
+    @objc func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        let latestLocation = locations[locations.count-1]
+        nearClient.checkReminders(latestLocation, onReminderTriggered : self.onReminderTriggered)
+    }
+    
+    @objc func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
+        manager.stopUpdatingLocation()
+    }
+    
+    // MARK: Reminder managing functions
+    
+    func onReminderTriggered(reminder: Reminder) {
+        print(reminder.reminderBody)
     }
     
     func addReminder(reminder: Reminder) {
