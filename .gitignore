@@ -1,4 +1,6 @@
 **/build/
 **/.DS_Store
 **/Pods/
+**/Podfile.lock
+**/nexttime.xcworkspace/
 
