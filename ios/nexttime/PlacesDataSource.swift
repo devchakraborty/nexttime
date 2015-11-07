@@ -55,6 +55,8 @@ class PlacesDataSource:NSObject,MLPAutoCompleteTextFieldDataSource {
                     continue
                 }
                 
+                print("PLACE ID", placeItem.placeID)
+                
                 var skipItem = false
                 
                 for typeObj:AnyObject in placeItem.types {
