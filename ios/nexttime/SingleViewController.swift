@@ -10,10 +10,20 @@ import UIKit
 
 class SingleViewController: UIViewController {
     
-    @IBOutlet weak var typeControl:UISegmentedControl?
     @IBOutlet weak var specifierField:UITextField?
     @IBOutlet weak var reminderBodyView:UITextView?
+    
+    let specifierPlaceholders = ["with": "Enter a friend's name (e.g. Bart)...", "near": "Enter the name of a place (e.g. Walmart)..."]
 
+    @IBAction func didChangeType(sender:AnyObject) {
+        let typeControl = sender as! UISegmentedControl
+        if typeControl.selectedSegmentIndex == 0 {
+            specifierField?.placeholder = specifierPlaceholders["with"]
+        } else {
+            specifierField?.placeholder = specifierPlaceholders["near"]
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.

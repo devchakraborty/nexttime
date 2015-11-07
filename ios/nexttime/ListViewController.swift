@@ -17,8 +17,6 @@ class ListViewController: UITableViewController {
         reminders = ReminderClient.sharedClient().getAllReminders()
         self.title = "All Reminders"
         super.viewDidLoad()
-        
-        print("REMINDER", reminders?[0].reminderBody)
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
