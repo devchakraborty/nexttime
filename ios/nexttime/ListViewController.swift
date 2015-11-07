@@ -26,7 +26,6 @@ class ListViewController: UITableViewController {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        print("WILL APPEAR")
         reminders = ReminderClient.sharedClient().getAllReminders()
         self.tableView.reloadData()
     }

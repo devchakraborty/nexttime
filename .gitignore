@@ -3,4 +3,5 @@
 **/Pods/
 **/Podfile.lock
 **/nexttime.xcworkspace/
+**/node_modules/
 

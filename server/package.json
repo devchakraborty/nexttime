@@ -1,0 +1,29 @@
+{
+  "name": "nexttime-server",
+  "version": "1.0.0",
+  "description": "NextTime Server",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/devchakraborty/nexttime"
+  },
+  "author": "Dev Chakraborty (hello@devc.ca)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/devchakraborty/nexttime/issues"
+  },
+  "homepage": "https://github.com/devchakraborty/nexttime",
+  "devDependencies": {
+    "apn": "^1.7.5",
+    "body-parser": "^1.14.1",
+    "express": "^4.13.3",
+    "express-validator": "^2.18.0",
+    "geolib": "^2.0.18",
+    "googlemaps": "^1.0.2",
+    "lodash": "^3.10.1",
+    "util": "^0.10.3"
+  }
+}

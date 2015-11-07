@@ -34,6 +34,7 @@ class ReminderClient: NSObject, CLLocationManagerDelegate{
     
     func initLocationManager()->CLLocationManager{
         let newLocationManager = CLLocationManager()
+        newLocationManager.distanceFilter = 500
         let authStatus = CLLocationManager.authorizationStatus()
         
         if(authStatus == CLAuthorizationStatus.NotDetermined){
@@ -51,6 +52,7 @@ class ReminderClient: NSObject, CLLocationManagerDelegate{
     // MARK: Delegate functions
     @objc func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let latestLocation = locations[locations.count-1]
+        // TODO: Send updated location to server
         nearClient.checkReminders(latestLocation, onReminderTriggered : self.onReminderTriggered)
     }
     
@@ -73,7 +75,6 @@ class ReminderClient: NSObject, CLLocationManagerDelegate{
         notification.fireDate = NSDate(timeIntervalSinceNow: 5)
         
         UIApplication.sharedApplication().scheduleLocalNotification(notification)
-        
     }
     
     func addReminder(reminder: Reminder) {
