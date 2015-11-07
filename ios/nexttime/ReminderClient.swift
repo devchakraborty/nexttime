@@ -38,4 +38,6 @@ class ReminderClient {
         let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(newReminder, toFile: ReminderClient.ArchiveURL.path!)
         return isSuccessfulSave
     }
+    
+    // TODO - implement remove reminder
 }
