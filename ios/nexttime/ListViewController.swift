@@ -10,8 +10,7 @@ import UIKit
 
 class ListViewController: UITableViewController {
 
-    
-    var reminders:[Reminder]?
+    var reminders:[Reminder] = []
     
     override func viewDidLoad() {
         reminders = ReminderClient.sharedClient().getAllReminders()
@@ -23,6 +22,13 @@ class ListViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        print("WILL APPEAR")
+        reminders = ReminderClient.sharedClient().getAllReminders()
+        self.tableView.reloadData()
     }
 
     override func didReceiveMemoryWarning() {
@@ -37,18 +43,20 @@ class ListViewController: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return reminders?.count ?? 0
+        return reminders.count
     }
 
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell:ListViewCell = tableView.dequeueReusableCellWithIdentifier("ListCell", forIndexPath: indexPath) as! ListViewCell
         
-        let reminder:Reminder = reminders![indexPath.row]
+        let reminder:Reminder = reminders[indexPath.row]
         
         cell.contextLabel?.text = reminder.type + " " + reminder.specifier
         
         cell.reminderLabel?.text = reminder.reminderBody
+        
+        cell.tag = indexPath.row
 
         return cell
     }
@@ -87,14 +95,28 @@ class ListViewController: UITableViewController {
     }
     */
 
-    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier != nil && segue.identifier! == "toSingleUpdate" {
+            let cell = sender as? UITableViewCell
+            if cell != nil {
+                let controller = segue.destinationViewController as! SingleViewController
+                let reminder = reminders[cell!.tag]
+                controller.updateId = reminder.id
+                controller.defaultSegment = reminder.type
+                controller.defaultSpecifierText = reminder.specifier
+                controller.defaultReminderBodyText = reminder.reminderBody
+            }
+        }
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
     }
-    */
+
+    @IBAction func doLogout(sender:AnyObject) {
+        //TODO: Logout
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
 
 }

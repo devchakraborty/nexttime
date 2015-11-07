@@ -46,7 +46,7 @@ class PlacesDataSource:NSObject,MLPAutoCompleteTextFieldDataSource {
             
             print("RESPONSE", response)
             
-            var results:[PlaceAutoCompleteItem] = []
+            var results:[Place] = []
             
             for item:AnyObject in response! {
                 let placeItem = item as! GMSAutocompletePrediction
@@ -64,7 +64,7 @@ class PlacesDataSource:NSObject,MLPAutoCompleteTextFieldDataSource {
                     continue
                 }
                     
-                let autoCompleteItem = PlaceAutoCompleteItem(placeItem: placeItem)
+                let autoCompleteItem = Place(placeItem: placeItem)
                 
                 results.append(autoCompleteItem)
             }

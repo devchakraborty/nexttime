@@ -11,7 +11,7 @@ import MLPAutoCompleteTextField
 import GoogleMaps
 import MapKit
 
-class PlaceAutoCompleteItem:NSObject, MLPAutoCompletionObject {
+class Place:NSObject, MLPAutoCompletionObject {
     var placeItem:GMSAutocompletePrediction
     init(placeItem:GMSAutocompletePrediction) {
         self.placeItem = placeItem
