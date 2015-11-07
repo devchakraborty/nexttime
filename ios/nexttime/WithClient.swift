@@ -25,11 +25,11 @@ class WithClient {
         // IMPLEMENT
         // search for location data (from Parse) for friends in your reminder list
         // if they are close, activate reminder
-        for reminder in self.reminders {
+        /* for reminder in self.reminders {
             if friend(reminder.specifier).distance < 100 {
                onReminderTriggered(reminder)
             }
-        }
+        }*/
     }
     
     func checkReminders(currentLocation: CLLocation, onReminderTriggered: (Reminder) -> Void) {
