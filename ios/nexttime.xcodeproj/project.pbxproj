@@ -15,6 +15,10 @@
 		D726DA991BEDD8A7001A9E6E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D726DA981BEDD8A7001A9E6E /* LoginViewController.swift */; };
 		D726DA9B1BEDD93E001A9E6E /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D726DA9A1BEDD93E001A9E6E /* ListViewController.swift */; };
 		D726DA9D1BEDE1B8001A9E6E /* ListViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D726DA9C1BEDE1B8001A9E6E /* ListViewCell.swift */; };
+		D79FBA1B1BEE3C3A00534B93 /* PlacesDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = D79FBA1A1BEE3C3A00534B93 /* PlacesDataSource.swift */; };
+		D79FBA1D1BEE405600534B93 /* FriendsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = D79FBA1C1BEE405600534B93 /* FriendsDataSource.swift */; };
+		D79FBA1F1BEE408F00534B93 /* Friend.swift in Sources */ = {isa = PBXBuildFile; fileRef = D79FBA1E1BEE408F00534B93 /* Friend.swift */; };
+		D79FBA231BEE447C00534B93 /* PlaceAutoCompleteItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D79FBA221BEE447C00534B93 /* PlaceAutoCompleteItem.swift */; };
 		D7E19B291BEDACF900E6533D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7E19B281BEDACF900E6533D /* AppDelegate.swift */; };
 		D7E19B2B1BEDACF900E6533D /* SingleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7E19B2A1BEDACF900E6533D /* SingleViewController.swift */; };
 		D7E19B2E1BEDACF900E6533D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7E19B2C1BEDACF900E6533D /* Main.storyboard */; };
@@ -34,6 +38,10 @@
 		D726DA981BEDD8A7001A9E6E /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		D726DA9A1BEDD93E001A9E6E /* ListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		D726DA9C1BEDE1B8001A9E6E /* ListViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListViewCell.swift; sourceTree = "<group>"; };
+		D79FBA1A1BEE3C3A00534B93 /* PlacesDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlacesDataSource.swift; sourceTree = "<group>"; };
+		D79FBA1C1BEE405600534B93 /* FriendsDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendsDataSource.swift; sourceTree = "<group>"; };
+		D79FBA1E1BEE408F00534B93 /* Friend.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Friend.swift; sourceTree = "<group>"; };
+		D79FBA221BEE447C00534B93 /* PlaceAutoCompleteItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceAutoCompleteItem.swift; sourceTree = "<group>"; };
 		D7E19B251BEDACF900E6533D /* nexttime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = nexttime.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7E19B281BEDACF900E6533D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D7E19B2A1BEDACF900E6533D /* SingleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleViewController.swift; sourceTree = "<group>"; };
@@ -91,6 +99,10 @@
 				88B41E101BEDBC5E000C24DE /* WithClient.swift */,
 				88B41E121BEDBCE0000C24DE /* ReminderClient.swift */,
 				D726DA981BEDD8A7001A9E6E /* LoginViewController.swift */,
+				D79FBA1A1BEE3C3A00534B93 /* PlacesDataSource.swift */,
+				D79FBA221BEE447C00534B93 /* PlaceAutoCompleteItem.swift */,
+				D79FBA1C1BEE405600534B93 /* FriendsDataSource.swift */,
+				D79FBA1E1BEE408F00534B93 /* Friend.swift */,
 			);
 			path = nexttime;
 			sourceTree = "<group>";
@@ -234,15 +246,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D79FBA1D1BEE405600534B93 /* FriendsDataSource.swift in Sources */,
 				88B41E0D1BEDB57E000C24DE /* NearClient.swift in Sources */,
 				D7E19B2B1BEDACF900E6533D /* SingleViewController.swift in Sources */,
+				D79FBA231BEE447C00534B93 /* PlaceAutoCompleteItem.swift in Sources */,
 				D726DA9D1BEDE1B8001A9E6E /* ListViewCell.swift in Sources */,
 				88B41E111BEDBC5E000C24DE /* WithClient.swift in Sources */,
 				88B41E131BEDBCE0000C24DE /* ReminderClient.swift in Sources */,
 				D726DA991BEDD8A7001A9E6E /* LoginViewController.swift in Sources */,
 				D726DA9B1BEDD93E001A9E6E /* ListViewController.swift in Sources */,
 				D7E19B311BEDACF900E6533D /* nexttime.xcdatamodeld in Sources */,
+				D79FBA1B1BEE3C3A00534B93 /* PlacesDataSource.swift in Sources */,
 				D7E19B291BEDACF900E6533D /* AppDelegate.swift in Sources */,
+				D79FBA1F1BEE408F00534B93 /* Friend.swift in Sources */,
 				88B41E0F1BEDB6F4000C24DE /* Reminder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

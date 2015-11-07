@@ -89,7 +89,7 @@
                     <navigationItem key="navigationItem" title="All Reminders" id="WjU-gH-pfZ">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="zdo-nQ-SeU">
                             <connections>
-                                <segue destination="Kwk-RL-LOg" kind="push" id="VbK-K2-PjR"/>
+                                <segue destination="Kwk-RL-LOg" kind="push" identifier="toSingle" id="VbK-K2-PjR"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -129,7 +129,7 @@
                                     <action selector="didChangeType:" destination="Kwk-RL-LOg" eventType="valueChanged" id="QmR-XS-F5Y"/>
                                 </connections>
                             </segmentedControl>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter a friend's name (e.g. Bart)..." textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jQX-A0-yCY">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter a friend's name (e.g. Bart)..." textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jQX-A0-yCY" customClass="MLPAutoCompleteTextField">
                                 <rect key="frame" x="20" y="137" width="280" height="30"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -158,7 +158,8 @@
                     <navigationItem key="navigationItem" id="7s0-zI-7N5"/>
                     <connections>
                         <outlet property="reminderBodyView" destination="8jf-rW-gVv" id="cZN-Gp-gsl"/>
-                        <outlet property="specifierField" destination="jQX-A0-yCY" id="4L0-vz-NWd"/>
+                        <outlet property="specifierField" destination="jQX-A0-yCY" id="hTm-kI-GAT"/>
+                        <outlet property="typeControl" destination="U3F-y7-y0h" id="XpL-io-073"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="myB-1o-ve6" userLabel="First Responder" sceneMemberID="firstResponder"/>

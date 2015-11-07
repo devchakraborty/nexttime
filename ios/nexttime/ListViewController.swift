@@ -44,7 +44,7 @@ class ListViewController: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell:ListViewCell = tableView.dequeueReusableCellWithIdentifier("ListCell", forIndexPath: indexPath) as! ListViewCell
         
-        let reminder:Reminder = ReminderClient.sharedClient().getAllReminders()[indexPath.row]
+        let reminder:Reminder = reminders![indexPath.row]
         
         cell.contextLabel?.text = reminder.type + " " + reminder.specifier
         
@@ -54,13 +54,11 @@ class ListViewController: UITableViewController {
     }
 
 
-    /*
     // Override to support conditional editing of the table view.
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
         // Return false if you do not want the specified item to be editable.
-        return true
+        return false
     }
-    */
 
     /*
     // Override to support editing the table view.

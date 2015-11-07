@@ -7,19 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		03B32E679F13434A7F6CB714CDCEF851 /* MLPAutoCompleteTextField-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = B32C2F0F045DAB551A771E60770731E0 /* MLPAutoCompleteTextField-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		1EA1BF3895EE25ECED10C4A233EA6D0D /* MLPAutoCompleteTextField-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 19196130F6A9242944D16B3739E7B5A2 /* MLPAutoCompleteTextField-dummy.m */; };
-		2432410A4412530D69D6179D21A4CCF6 /* MLPAutoCompletionObject.h in Headers */ = {isa = PBXBuildFile; fileRef = 5B5DB66FDD200DA97182F790C12C979F /* MLPAutoCompletionObject.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		03B32E679F13434A7F6CB714CDCEF851 /* MLPAutoCompleteTextField-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D05C1E4A0817CC6E19F6A43EA4ACEFB /* MLPAutoCompleteTextField-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1EA1BF3895EE25ECED10C4A233EA6D0D /* MLPAutoCompleteTextField-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 87BD630CC0195675FC5BCF8090A62513 /* MLPAutoCompleteTextField-dummy.m */; };
+		2432410A4412530D69D6179D21A4CCF6 /* MLPAutoCompletionObject.h in Headers */ = {isa = PBXBuildFile; fileRef = CD764318AF277F28935DFB4742819AF1 /* MLPAutoCompletionObject.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		24DCFCE383E5FADF0029729EB14164D9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */; };
 		4FCEEE2998D33AEFB236E8EEDB5F85D6 /* Pods-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 2BCC458FDD5F692BBB2BFC64BB5701FC /* Pods-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		C07D24EAC2C74B91FB72370595ADA088 /* NSString+Levenshtein.h in Headers */ = {isa = PBXBuildFile; fileRef = EF0A87DE1000FF63B16975B197992ADE /* NSString+Levenshtein.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C07D24EAC2C74B91FB72370595ADA088 /* NSString+Levenshtein.h in Headers */ = {isa = PBXBuildFile; fileRef = F18B8C033770178C543A278753BD564E /* NSString+Levenshtein.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D6C893E51CD051D4BD466C5E295734D1 /* Pods-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 894E5DA93A9F359521A89826BE6DA777 /* Pods-dummy.m */; };
-		D9F4A266435BE1818B841E40822DF4A9 /* MLPAutoCompleteTextFieldDataSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 4ED2A2BAAE58B7ED900F8F466835E8C1 /* MLPAutoCompleteTextFieldDataSource.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D9F4A266435BE1818B841E40822DF4A9 /* MLPAutoCompleteTextFieldDataSource.h in Headers */ = {isa = PBXBuildFile; fileRef = C686E6CE5B6F84C3F240E84F29996F07 /* MLPAutoCompleteTextFieldDataSource.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DA3028029CA268B17E861B6270D0CA82 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */; };
-		DDDB89D0675FB702ABE58BF963E90A8B /* MLPAutoCompleteTextField.h in Headers */ = {isa = PBXBuildFile; fileRef = 20AFA3D0C1E3C333E78F03623D276080 /* MLPAutoCompleteTextField.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		E27DA63FFEB54367D710BB42F942E535 /* MLPAutoCompleteTextFieldDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 8AC3C39B86B20B0DE552CCC116BFC12E /* MLPAutoCompleteTextFieldDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F8C1D09CF3460F17115E28A46D87672E /* MLPAutoCompleteTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D1324C1FDC5BB2D460AF049129DE2CB /* MLPAutoCompleteTextField.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		FA8CB39046E86BAE61EBCF851465A6C3 /* NSString+Levenshtein.m in Sources */ = {isa = PBXBuildFile; fileRef = 33CDDF07F258629C64A5E8FF421BA69A /* NSString+Levenshtein.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		DDDB89D0675FB702ABE58BF963E90A8B /* MLPAutoCompleteTextField.h in Headers */ = {isa = PBXBuildFile; fileRef = C089B34340B2097694C8EC50CA6747D2 /* MLPAutoCompleteTextField.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E27DA63FFEB54367D710BB42F942E535 /* MLPAutoCompleteTextFieldDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 8ABC018858348F3797DC318D7785C001 /* MLPAutoCompleteTextFieldDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F8C1D09CF3460F17115E28A46D87672E /* MLPAutoCompleteTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 4156BDB93A35CCDDDE508AE8D8CA9020 /* MLPAutoCompleteTextField.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		FA8CB39046E86BAE61EBCF851465A6C3 /* NSString+Levenshtein.m in Sources */ = {isa = PBXBuildFile; fileRef = 98525290238BAA62C75ABADE55E5C12D /* NSString+Levenshtein.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,33 +33,35 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		19196130F6A9242944D16B3739E7B5A2 /* MLPAutoCompleteTextField-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "MLPAutoCompleteTextField-dummy.m"; sourceTree = "<group>"; };
-		1FD9031A69E0596E030E1E2272A62B8E /* MLPAutoCompleteTextField.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = MLPAutoCompleteTextField.modulemap; sourceTree = "<group>"; };
-		20AFA3D0C1E3C333E78F03623D276080 /* MLPAutoCompleteTextField.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MLPAutoCompleteTextField.h; path = MLPAutoCompleteTextField/MLPAutoCompleteTextField.h; sourceTree = "<group>"; };
+		0D05C1E4A0817CC6E19F6A43EA4ACEFB /* MLPAutoCompleteTextField-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MLPAutoCompleteTextField-umbrella.h"; sourceTree = "<group>"; };
 		2BCC458FDD5F692BBB2BFC64BB5701FC /* Pods-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-umbrella.h"; sourceTree = "<group>"; };
-		33CDDF07F258629C64A5E8FF421BA69A /* NSString+Levenshtein.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSString+Levenshtein.m"; path = "MLPAutoCompleteTextField/NSString+Levenshtein.m"; sourceTree = "<group>"; };
-		3DA3FD30B377ED07C825867AE873409F /* MLPAutoCompleteTextField.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MLPAutoCompleteTextField.xcconfig; sourceTree = "<group>"; };
+		34D0E9C30D1531951624B4D28F206990 /* GoogleMaps.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMaps.framework; path = Frameworks/GoogleMaps.framework; sourceTree = "<group>"; };
 		3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		4ED2A2BAAE58B7ED900F8F466835E8C1 /* MLPAutoCompleteTextFieldDataSource.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MLPAutoCompleteTextFieldDataSource.h; path = MLPAutoCompleteTextField/MLPAutoCompleteTextFieldDataSource.h; sourceTree = "<group>"; };
-		5B5DB66FDD200DA97182F790C12C979F /* MLPAutoCompletionObject.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MLPAutoCompletionObject.h; path = MLPAutoCompleteTextField/MLPAutoCompletionObject.h; sourceTree = "<group>"; };
-		736985FC1E4E7C7B1B943F8712259A27 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4156BDB93A35CCDDDE508AE8D8CA9020 /* MLPAutoCompleteTextField.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MLPAutoCompleteTextField.m; path = MLPAutoCompleteTextField/MLPAutoCompleteTextField.m; sourceTree = "<group>"; };
+		4975F88A1CA6018F66E7099877523BC5 /* GoogleMaps.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = GoogleMaps.bundle; path = Frameworks/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle; sourceTree = "<group>"; };
+		6ABE1092EEF2B5770FD4657CDBA87E13 /* MLPAutoCompleteTextField.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MLPAutoCompleteTextField.xcconfig; sourceTree = "<group>"; };
 		79A9DEDC89FE8336BF5FEDAAF75BF7FC /* Pods.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = Pods.modulemap; sourceTree = "<group>"; };
+		83C5C587AA08E52C249514508EEC1EBC /* MLPAutoCompleteTextField.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = MLPAutoCompleteTextField.modulemap; sourceTree = "<group>"; };
 		85E46C8A811FF88336AAB40FC7D23E5E /* MLPAutoCompleteTextField.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MLPAutoCompleteTextField.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		87B213035BAC5F75386F62D3C75D2342 /* Pods-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-acknowledgements.plist"; sourceTree = "<group>"; };
+		87BD630CC0195675FC5BCF8090A62513 /* MLPAutoCompleteTextField-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "MLPAutoCompleteTextField-dummy.m"; sourceTree = "<group>"; };
 		894E5DA93A9F359521A89826BE6DA777 /* Pods-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-dummy.m"; sourceTree = "<group>"; };
-		8AC3C39B86B20B0DE552CCC116BFC12E /* MLPAutoCompleteTextFieldDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MLPAutoCompleteTextFieldDelegate.h; path = MLPAutoCompleteTextField/MLPAutoCompleteTextFieldDelegate.h; sourceTree = "<group>"; };
-		8D1324C1FDC5BB2D460AF049129DE2CB /* MLPAutoCompleteTextField.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MLPAutoCompleteTextField.m; path = MLPAutoCompleteTextField/MLPAutoCompleteTextField.m; sourceTree = "<group>"; };
+		8ABC018858348F3797DC318D7785C001 /* MLPAutoCompleteTextFieldDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MLPAutoCompleteTextFieldDelegate.h; path = MLPAutoCompleteTextField/MLPAutoCompleteTextFieldDelegate.h; sourceTree = "<group>"; };
+		94287C335BF9C7B76BD5FF62C42B2D8B /* MLPAutoCompleteTextField-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MLPAutoCompleteTextField-prefix.pch"; sourceTree = "<group>"; };
 		977577C045EDA9D9D1F46E2598D19FC7 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Pods.debug.xcconfig; sourceTree = "<group>"; };
-		B32C2F0F045DAB551A771E60770731E0 /* MLPAutoCompleteTextField-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MLPAutoCompleteTextField-umbrella.h"; sourceTree = "<group>"; };
+		98525290238BAA62C75ABADE55E5C12D /* NSString+Levenshtein.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSString+Levenshtein.m"; path = "MLPAutoCompleteTextField/NSString+Levenshtein.m"; sourceTree = "<group>"; };
+		A5DA019799B6F171C80BF91FE6E1E539 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		C089B34340B2097694C8EC50CA6747D2 /* MLPAutoCompleteTextField.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MLPAutoCompleteTextField.h; path = MLPAutoCompleteTextField/MLPAutoCompleteTextField.h; sourceTree = "<group>"; };
 		C434BF028D3828F16B20AA6FD6B409A8 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C686E6CE5B6F84C3F240E84F29996F07 /* MLPAutoCompleteTextFieldDataSource.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MLPAutoCompleteTextFieldDataSource.h; path = MLPAutoCompleteTextField/MLPAutoCompleteTextFieldDataSource.h; sourceTree = "<group>"; };
 		CBC0F7C552B739C909B650A0F42F7F38 /* Pods-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-resources.sh"; sourceTree = "<group>"; };
+		CD764318AF277F28935DFB4742819AF1 /* MLPAutoCompletionObject.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MLPAutoCompletionObject.h; path = MLPAutoCompleteTextField/MLPAutoCompletionObject.h; sourceTree = "<group>"; };
 		D0405803033A2A777B8E4DFA0C1800ED /* Pods-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-acknowledgements.markdown"; sourceTree = "<group>"; };
 		DA312349A49333542E6F4B36B329960E /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Pods.release.xcconfig; sourceTree = "<group>"; };
-		DDE79FDB66C95D9A1C0BA59758E53DB2 /* MLPAutoCompleteTextField-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MLPAutoCompleteTextField-prefix.pch"; sourceTree = "<group>"; };
 		E7F21354943D9F42A70697D5A5EF72E9 /* Pods-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-frameworks.sh"; sourceTree = "<group>"; };
 		E8446514FBAD26C0E18F24A5715AEF67 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		EF0A87DE1000FF63B16975B197992ADE /* NSString+Levenshtein.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSString+Levenshtein.h"; path = "MLPAutoCompleteTextField/NSString+Levenshtein.h"; sourceTree = "<group>"; };
+		F18B8C033770178C543A278753BD564E /* NSString+Levenshtein.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSString+Levenshtein.h"; path = "MLPAutoCompleteTextField/NSString+Levenshtein.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +84,37 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		49508F64B1846571AAB6D6EDF8C80F34 /* GoogleMaps */ = {
+			isa = PBXGroup;
+			children = (
+				F59AAEFA668C3F0CE12DED275BD046EF /* Frameworks */,
+				55DE6B09AE7F67B77E95547E79578A17 /* Resources */,
+			);
+			path = GoogleMaps;
+			sourceTree = "<group>";
+		};
+		55DE6B09AE7F67B77E95547E79578A17 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				4975F88A1CA6018F66E7099877523BC5 /* GoogleMaps.bundle */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		5EDD0FF33E688D19A06BF21CB86617A5 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				A5DA019799B6F171C80BF91FE6E1E539 /* Info.plist */,
+				83C5C587AA08E52C249514508EEC1EBC /* MLPAutoCompleteTextField.modulemap */,
+				6ABE1092EEF2B5770FD4657CDBA87E13 /* MLPAutoCompleteTextField.xcconfig */,
+				87BD630CC0195675FC5BCF8090A62513 /* MLPAutoCompleteTextField-dummy.m */,
+				94287C335BF9C7B76BD5FF62C42B2D8B /* MLPAutoCompleteTextField-prefix.pch */,
+				0D05C1E4A0817CC6E19F6A43EA4ACEFB /* MLPAutoCompleteTextField-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/MLPAutoCompleteTextField";
+			sourceTree = "<group>";
+		};
 		75D98FF52E597A11900E131B6C4E1ADA /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -105,18 +138,10 @@
 			children = (
 				BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */,
 				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
-				AD72095C9CB0B7B979BB5BD86893AB43 /* Pods */,
+				E55D1C62E88F794410B640AD9ACCDB68 /* Pods */,
 				CEBB6547FD8DAEB8EB40FF21A8FE6FF8 /* Products */,
 				B7B80995527643776607AFFA75B91E24 /* Targets Support Files */,
 			);
-			sourceTree = "<group>";
-		};
-		AD72095C9CB0B7B979BB5BD86893AB43 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				CD318252C3F33A21993F4038FA5AD749 /* MLPAutoCompleteTextField */,
-			);
-			name = Pods;
 			sourceTree = "<group>";
 		};
 		B7B80995527643776607AFFA75B91E24 /* Targets Support Files */ = {
@@ -143,17 +168,17 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
-		CD318252C3F33A21993F4038FA5AD749 /* MLPAutoCompleteTextField */ = {
+		C4AD9D42BBA3222084247B1C4A98A140 /* MLPAutoCompleteTextField */ = {
 			isa = PBXGroup;
 			children = (
-				20AFA3D0C1E3C333E78F03623D276080 /* MLPAutoCompleteTextField.h */,
-				8D1324C1FDC5BB2D460AF049129DE2CB /* MLPAutoCompleteTextField.m */,
-				4ED2A2BAAE58B7ED900F8F466835E8C1 /* MLPAutoCompleteTextFieldDataSource.h */,
-				8AC3C39B86B20B0DE552CCC116BFC12E /* MLPAutoCompleteTextFieldDelegate.h */,
-				5B5DB66FDD200DA97182F790C12C979F /* MLPAutoCompletionObject.h */,
-				EF0A87DE1000FF63B16975B197992ADE /* NSString+Levenshtein.h */,
-				33CDDF07F258629C64A5E8FF421BA69A /* NSString+Levenshtein.m */,
-				D6B5C368D8B9EE333FBF7EB24F434A4D /* Support Files */,
+				C089B34340B2097694C8EC50CA6747D2 /* MLPAutoCompleteTextField.h */,
+				4156BDB93A35CCDDDE508AE8D8CA9020 /* MLPAutoCompleteTextField.m */,
+				C686E6CE5B6F84C3F240E84F29996F07 /* MLPAutoCompleteTextFieldDataSource.h */,
+				8ABC018858348F3797DC318D7785C001 /* MLPAutoCompleteTextFieldDelegate.h */,
+				CD764318AF277F28935DFB4742819AF1 /* MLPAutoCompletionObject.h */,
+				F18B8C033770178C543A278753BD564E /* NSString+Levenshtein.h */,
+				98525290238BAA62C75ABADE55E5C12D /* NSString+Levenshtein.m */,
+				5EDD0FF33E688D19A06BF21CB86617A5 /* Support Files */,
 			);
 			path = MLPAutoCompleteTextField;
 			sourceTree = "<group>";
@@ -167,18 +192,21 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		D6B5C368D8B9EE333FBF7EB24F434A4D /* Support Files */ = {
+		E55D1C62E88F794410B640AD9ACCDB68 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				736985FC1E4E7C7B1B943F8712259A27 /* Info.plist */,
-				1FD9031A69E0596E030E1E2272A62B8E /* MLPAutoCompleteTextField.modulemap */,
-				3DA3FD30B377ED07C825867AE873409F /* MLPAutoCompleteTextField.xcconfig */,
-				19196130F6A9242944D16B3739E7B5A2 /* MLPAutoCompleteTextField-dummy.m */,
-				DDE79FDB66C95D9A1C0BA59758E53DB2 /* MLPAutoCompleteTextField-prefix.pch */,
-				B32C2F0F045DAB551A771E60770731E0 /* MLPAutoCompleteTextField-umbrella.h */,
+				49508F64B1846571AAB6D6EDF8C80F34 /* GoogleMaps */,
+				C4AD9D42BBA3222084247B1C4A98A140 /* MLPAutoCompleteTextField */,
 			);
-			name = "Support Files";
-			path = "../Target Support Files/MLPAutoCompleteTextField";
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		F59AAEFA668C3F0CE12DED275BD046EF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				34D0E9C30D1531951624B4D28F206990 /* GoogleMaps.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -303,7 +331,7 @@
 /* Begin XCBuildConfiguration section */
 		02444B27E27A293DCC1291A0D0DF865C /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3DA3FD30B377ED07C825867AE873409F /* MLPAutoCompleteTextField.xcconfig */;
+			baseConfigurationReference = 6ABE1092EEF2B5770FD4657CDBA87E13 /* MLPAutoCompleteTextField.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -360,7 +388,7 @@
 		};
 		6A7C41ED11218D5F935CF1A00F792AAC /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3DA3FD30B377ED07C825867AE873409F /* MLPAutoCompleteTextField.xcconfig */;
+			baseConfigurationReference = 6ABE1092EEF2B5770FD4657CDBA87E13 /* MLPAutoCompleteTextField.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
