@@ -9,6 +9,7 @@ let gmAPI = new googlemaps({
 	key: "AIzaSyDotZw0DuUGQoEW_6P8Ka0_j1LS4HoyC2I",
 	secure: true
 })
+let apn = require('node-apn')
 
 const MAX_DIST_NOTIF = 5.0 // KM
 
@@ -76,12 +77,11 @@ app.post('/login', fbIDCheck, (req, res) => {
 		res.status(401).end()
 })
 
-app.post('/register', fbIDCheck, fbTokenCheck, deviceTokenCheck, errorCheck, (req, res) => {
-	let fbID = req.fbID, deviceToken = req.body.device_token, fbToken = req.fbToken
+app.post('/register', fbIDCheck, deviceTokenCheck, errorCheck, (req, res) => {
+	let fbID = req.fbID, deviceToken = req.body.device_token
 	people[fbID] = {
 		fbID: fbID,
-		deviceToken: deviceToken,
-		fbToken: fbToken
+		deviceToken: deviceToken
 	}
 	reminders[fbID] = {}
 
