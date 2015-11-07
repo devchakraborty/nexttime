@@ -12,12 +12,15 @@ import GoogleMaps
 import MapKit
 
 class Place:NSObject, MLPAutoCompletionObject {
-    var placeItem:GMSAutocompletePrediction
-    init(placeItem:GMSAutocompletePrediction) {
-        self.placeItem = placeItem
+    var placeName:String
+    var placeId:String
+    
+    init(placeName:String, placeId:String) {
+        self.placeName = placeName
+        self.placeId = placeId
     }
     
     func autocompleteString() -> String! {
-        return self.placeItem.attributedFullText.string
+        return self.placeName
     }
 }

@@ -159,6 +159,7 @@
 				TargetAttributes = {
 					D7E19B241BEDACF900E6533D = {
 						CreatedOnToolsVersion = 7.1;
+						DevelopmentTeam = 5N4A4552FM;
 					};
 				};
 			};
@@ -371,7 +372,9 @@
 			baseConfigurationReference = 7836193807BC60A3F2A2946A /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = nexttime/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.nexttime.nexttime;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -383,7 +386,9 @@
 			baseConfigurationReference = 4AE09C84518A5F87562C8625 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = nexttime/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.nexttime.nexttime;
 				PRODUCT_NAME = "$(TARGET_NAME)";

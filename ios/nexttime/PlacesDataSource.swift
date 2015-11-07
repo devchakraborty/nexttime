@@ -51,12 +51,17 @@ class PlacesDataSource:NSObject,MLPAutoCompleteTextFieldDataSource {
             for item:AnyObject in response! {
                 let placeItem = item as! GMSAutocompletePrediction
                 
+                if placeItem.placeID == nil {
+                    continue
+                }
+                
                 var skipItem = false
                 
                 for typeObj:AnyObject in placeItem.types {
                     let type = typeObj as! String
                     if (self.skipTypes[type] != nil) {
                         skipItem = true
+                        break
                     }
                 }
                 
@@ -64,9 +69,9 @@ class PlacesDataSource:NSObject,MLPAutoCompleteTextFieldDataSource {
                     continue
                 }
                     
-                let autoCompleteItem = Place(placeItem: placeItem)
+                let place = Place(placeName: placeItem.attributedFullText.string, placeId: placeItem.placeID!)
                 
-                results.append(autoCompleteItem)
+                results.append(place)
             }
             
             handler(results)

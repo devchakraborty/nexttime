@@ -102,12 +102,16 @@ class ListViewController: UITableViewController {
         if segue.identifier != nil && segue.identifier! == "toSingleUpdate" {
             let cell = sender as? UITableViewCell
             if cell != nil {
+                print("UPDATE")
                 let controller = segue.destinationViewController as! SingleViewController
                 let reminder = reminders[cell!.tag]
                 controller.updateId = reminder.id
                 controller.defaultSegment = reminder.type
                 controller.defaultSpecifierText = reminder.specifier
                 controller.defaultReminderBodyText = reminder.reminderBody
+                if reminder.type == "near" {
+                    controller.selectedPlace = Place(placeName: reminder.specifier, placeId: reminder.reminderBody)
+                }
             }
         }
         // Get the new view controller using segue.destinationViewController.

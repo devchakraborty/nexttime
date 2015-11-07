@@ -8,6 +8,7 @@
 
 import UIKit
 import MLPAutoCompleteTextField
+import GoogleMaps
 
 class SingleViewController: UIViewController, MLPAutoCompleteTextFieldDelegate, UITextFieldDelegate, UITextViewDelegate {
     
@@ -49,15 +50,20 @@ class SingleViewController: UIViewController, MLPAutoCompleteTextFieldDelegate, 
         let defaultIndex = "with" == defaultSegment ? 0 : 1
         
         typeControl!.selectedSegmentIndex = defaultIndex
-        if typeControl != nil {
-            didChangeType(typeControl!)
-        }
+        let initPlace = selectedPlace
+        didChangeType(typeControl!)
+        selectedPlace = initPlace
         
         specifierField!.text = defaultSpecifierText
         reminderBodyView!.text = defaultReminderBodyText
         
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        if updateId != nil {
+            print("UPDATE VIEW")
+            
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -95,7 +101,7 @@ class SingleViewController: UIViewController, MLPAutoCompleteTextFieldDelegate, 
         print("Create")
 
         if updateId == nil {
-            ReminderClient.sharedClient().addReminder(Reminder(type: typeControl!.selectedSegmentIndex == 0 ? "with" : "near", specifier: specifierField!.text!, reminderBody: reminderBodyView!.text))
+            ReminderClient.sharedClient().createReminder(typeControl!.selectedSegmentIndex == 0 ? "with" : "near", specifier: specifierField!.text!, specifierId: typeControl!.selectedSegmentIndex == 0 ? "friend" : selectedPlace!.placeId, reminderBody: reminderBodyView!.text)
         } else {
             //TODO: Update reminder
         }

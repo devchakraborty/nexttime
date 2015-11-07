@@ -38,8 +38,8 @@ class ReminderClient {
         }
     }
     
-    func createReminder(type: String, place: String, reminderBody: String)->Bool{
-        let newReminder = Reminder(type: type, specifier: place, reminderBody: reminderBody)
+    func createReminder(type: String, specifier: String, specifierId: String, reminderBody: String)->Bool{
+        let newReminder = Reminder(type: type, specifier: specifier, specifierId: specifierId, reminderBody: reminderBody)
         addReminder(newReminder)
         let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(newReminder, toFile: ReminderClient.ArchiveURL.path!)
         return isSuccessfulSave
@@ -47,6 +47,15 @@ class ReminderClient {
     
     func getAllReminders() -> [Reminder] {
         return nearClient.reminders + withClient.reminders
+    }
+    
+    func getReminder(id:String) -> Reminder? {
+        for item:Reminder in getAllReminders() {
+            if item.id == id {
+                return item
+            }
+        }
+        return nil
     }
     
     // TODO - implement remove reminder
