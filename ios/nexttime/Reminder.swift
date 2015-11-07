@@ -44,6 +44,7 @@ class Reminder: NSObject, NSCoding {
         aCoder.encodeObject(type, forKey: PropertyKey.type)
         aCoder.encodeObject(specifier, forKey: PropertyKey.specifier)
         aCoder.encodeObject(reminderBody, forKey: PropertyKey.reminderBody)
+        aCoder.encodeObject(id, forKey: PropertyKey.id)
     }
     
     required convenience init(coder aDecoder: NSCoder) {

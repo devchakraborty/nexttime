@@ -10,12 +10,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "NearClient.swift"
-            timestampString = "468569778.003518"
+            timestampString = "468577428.685627"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "30"
-            endingLineNumber = "30"
-            landmarkName = "getClosestSearchResult(_:searchQuery:)"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
+            landmarkName = "getClosestSearchResult(_:reminder:onReminderTriggered:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "nexttime/Reminder.swift"
-            timestampString = "468576780.620649"
+            timestampString = "468577428.685627"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "35"
-            endingLineNumber = "35"
+            startingLineNumber = "37"
+            endingLineNumber = "37"
             landmarkName = "init(type:specifier:reminderBody:id:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -42,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "nexttime/Reminder.swift"
-            timestampString = "468576831.575149"
+            timestampString = "468577428.685627"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "48"
-            endingLineNumber = "48"
+            startingLineNumber = "53"
+            endingLineNumber = "53"
             landmarkName = "init(coder:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -58,11 +58,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "nexttime/Reminder.swift"
-            timestampString = "468577033.769814"
+            timestampString = "468577428.685627"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "28"
-            endingLineNumber = "28"
+            startingLineNumber = "27"
+            endingLineNumber = "27"
             landmarkName = "init(type:specifier:reminderBody:)"
             landmarkType = "5">
          </BreakpointContent>
