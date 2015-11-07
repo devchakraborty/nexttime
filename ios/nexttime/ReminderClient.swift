@@ -71,6 +71,7 @@ class ReminderClient: NSObject, CLLocationManagerDelegate{
         let notification = UILocalNotification()
         notification.alertAction = "Yes"
         notification.alertBody = "You are near " + reminder.specifier + ", " + reminder.reminderBody
+        notification.category = "REMINDER_CATEGORY"
         
         notification.fireDate = NSDate(timeIntervalSinceNow: 5)
         
