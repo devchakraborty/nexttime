@@ -11,6 +11,9 @@
 		88B41E0F1BEDB6F4000C24DE /* Reminder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B41E0E1BEDB6F4000C24DE /* Reminder.swift */; };
 		88B41E111BEDBC5E000C24DE /* WithClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B41E101BEDBC5E000C24DE /* WithClient.swift */; };
 		88B41E131BEDBCE0000C24DE /* ReminderClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B41E121BEDBCE0000C24DE /* ReminderClient.swift */; };
+		D726DA991BEDD8A7001A9E6E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D726DA981BEDD8A7001A9E6E /* LoginViewController.swift */; };
+		D726DA9B1BEDD93E001A9E6E /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D726DA9A1BEDD93E001A9E6E /* ListViewController.swift */; };
+		D726DA9D1BEDE1B8001A9E6E /* ListViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D726DA9C1BEDE1B8001A9E6E /* ListViewCell.swift */; };
 		D7E19B291BEDACF900E6533D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7E19B281BEDACF900E6533D /* AppDelegate.swift */; };
 		D7E19B2B1BEDACF900E6533D /* SingleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7E19B2A1BEDACF900E6533D /* SingleViewController.swift */; };
 		D7E19B2E1BEDACF900E6533D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7E19B2C1BEDACF900E6533D /* Main.storyboard */; };
@@ -24,6 +27,9 @@
 		88B41E0E1BEDB6F4000C24DE /* Reminder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reminder.swift; sourceTree = "<group>"; };
 		88B41E101BEDBC5E000C24DE /* WithClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WithClient.swift; sourceTree = "<group>"; };
 		88B41E121BEDBCE0000C24DE /* ReminderClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReminderClient.swift; sourceTree = "<group>"; };
+		D726DA981BEDD8A7001A9E6E /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		D726DA9A1BEDD93E001A9E6E /* ListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
+		D726DA9C1BEDE1B8001A9E6E /* ListViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListViewCell.swift; sourceTree = "<group>"; };
 		D7E19B251BEDACF900E6533D /* nexttime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = nexttime.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7E19B281BEDACF900E6533D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D7E19B2A1BEDACF900E6533D /* SingleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleViewController.swift; sourceTree = "<group>"; };
@@ -69,12 +75,15 @@
 				D7E19B281BEDACF900E6533D /* AppDelegate.swift */,
 				D7E19B2A1BEDACF900E6533D /* SingleViewController.swift */,
 				D7E19B2C1BEDACF900E6533D /* Main.storyboard */,
+				D726DA9C1BEDE1B8001A9E6E /* ListViewCell.swift */,
+				D726DA9A1BEDD93E001A9E6E /* ListViewController.swift */,
 				D7E19B321BEDACF900E6533D /* Assets.xcassets */,
 				D7E19B341BEDACF900E6533D /* LaunchScreen.storyboard */,
 				D7E19B371BEDACF900E6533D /* Info.plist */,
 				D7E19B2F1BEDACF900E6533D /* nexttime.xcdatamodeld */,
 				88B41E101BEDBC5E000C24DE /* WithClient.swift */,
 				88B41E121BEDBCE0000C24DE /* ReminderClient.swift */,
+				D726DA981BEDD8A7001A9E6E /* LoginViewController.swift */,
 			);
 			path = nexttime;
 			sourceTree = "<group>";
@@ -152,8 +161,11 @@
 			files = (
 				88B41E0D1BEDB57E000C24DE /* NearClient.swift in Sources */,
 				D7E19B2B1BEDACF900E6533D /* SingleViewController.swift in Sources */,
+				D726DA9D1BEDE1B8001A9E6E /* ListViewCell.swift in Sources */,
 				88B41E111BEDBC5E000C24DE /* WithClient.swift in Sources */,
 				88B41E131BEDBCE0000C24DE /* ReminderClient.swift in Sources */,
+				D726DA991BEDD8A7001A9E6E /* LoginViewController.swift in Sources */,
+				D726DA9B1BEDD93E001A9E6E /* ListViewController.swift in Sources */,
 				D7E19B311BEDACF900E6533D /* nexttime.xcdatamodeld in Sources */,
 				D7E19B291BEDACF900E6533D /* AppDelegate.swift in Sources */,
 				88B41E0F1BEDB6F4000C24DE /* Reminder.swift in Sources */,

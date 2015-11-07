@@ -10,9 +10,9 @@ import UIKit
 
 class SingleViewController: UIViewController {
     
-    @IBOutlet weak var segmentControl:UISegmentedControl?
-    @IBOutlet weak var textField:UITextField?
-    @IBOutlet weak var textView:UITextView?
+    @IBOutlet weak var typeControl:UISegmentedControl?
+    @IBOutlet weak var specifierField:UITextField?
+    @IBOutlet weak var reminderBodyView:UITextView?
 
     override func viewDidLoad() {
         super.viewDidLoad()
