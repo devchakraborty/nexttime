@@ -14,10 +14,13 @@ import FBSDKLoginKit
 
 class LoginViewController: UIViewController {
     
+    @IBOutlet weak var loginButton: FBSDKLoginButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         let loginButton: FBSDKLoginButton = FBSDKLoginButton()
         loginButton.center = self.view.center
+        loginButton.readPermissions = ["user_friends"]
         self.view.addSubview(loginButton)
     }
 
