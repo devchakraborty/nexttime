@@ -9,7 +9,5 @@
 #ifndef Bridge_Header_h
 #define Bridge_Header_h
 
-#import <FacebookSDK/FacebookSDK.h>
-
 
 #endif /* Bridge_Header_h */

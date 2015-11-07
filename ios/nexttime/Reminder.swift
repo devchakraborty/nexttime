@@ -13,29 +13,33 @@ class Reminder: NSObject, NSCoding {
     
     var type: String
     var specifier: String
+    var specifierId: String
     var reminderBody: String
     var id: String
     
     struct PropertyKey {
         static let type = "type"
         static let specifier = "specifier"
+        static let specifierId = "specifierId"
         static let reminderBody = "reminderBody"
         static let id = "id"
     }
     
     // MARK: Initialization
-    init(type: String, specifier: String, reminderBody: String) {
+    init(type: String, specifier: String, specifierId: String, reminderBody: String) {
         self.type = type
         self.specifier = specifier
+        self.specifierId = specifierId
         self.reminderBody = reminderBody
         self.id = NSUUID().UUIDString
         
         super.init()
     }
     
-    init(type: String, specifier: String, reminderBody: String, id: String) {
+    init(type: String, specifier: String, specifierId: String, reminderBody: String, id: String) {
         self.type = type
         self.specifier = specifier
+        self.specifierId = specifierId
         self.reminderBody = reminderBody
         self.id = id
     }
@@ -43,6 +47,7 @@ class Reminder: NSObject, NSCoding {
     func encodeWithCoder(aCoder: NSCoder) {
         aCoder.encodeObject(type, forKey: PropertyKey.type)
         aCoder.encodeObject(specifier, forKey: PropertyKey.specifier)
+        aCoder.encodeObject(specifierId, forKey: PropertyKey.specifierId)
         aCoder.encodeObject(reminderBody, forKey: PropertyKey.reminderBody)
         aCoder.encodeObject(id, forKey: PropertyKey.id)
     }
@@ -50,8 +55,9 @@ class Reminder: NSObject, NSCoding {
     required convenience init(coder aDecoder: NSCoder) {
         let type = aDecoder.decodeObjectForKey(PropertyKey.type) as! String
         let specifier = aDecoder.decodeObjectForKey(PropertyKey.specifier) as! String
+        let specifierId = aDecoder.decodeObjectForKey(PropertyKey.specifierId) as! String
         let reminderBody = aDecoder.decodeObjectForKey(PropertyKey.reminderBody) as! String
         let id = aDecoder.decodeObjectForKey(PropertyKey.id) as! String
-        self.init(type: type, specifier: specifier, reminderBody : reminderBody, id: id)
+        self.init(type: type, specifier: specifier, specifierId: specifierId, reminderBody : reminderBody, id: id)
      }
 }

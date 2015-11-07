@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreLocation
+import FBSDKCoreKit
 // import something for Parse
 
 class WithClient {
