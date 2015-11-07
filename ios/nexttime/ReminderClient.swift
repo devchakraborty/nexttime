@@ -25,7 +25,7 @@ class ReminderClient: NSObject, CLLocationManagerDelegate{
         
         super.init()
         locationManager = initLocationManager()
-        locationManager!.startMonitoringSignificantLocationChanges()
+        locationManager!.startUpdatingLocation()
         let reminders = NSKeyedUnarchiver.unarchiveObjectWithFile(ReminderClient.ArchiveURL.path!) as? [Reminder] ?? []
         for reminder in reminders {
             addReminder(reminder)
@@ -40,7 +40,6 @@ class ReminderClient: NSObject, CLLocationManagerDelegate{
             newLocationManager.requestAlwaysAuthorization()
         }
         newLocationManager.delegate = self
-        
         
         return newLocationManager
     }
@@ -57,6 +56,7 @@ class ReminderClient: NSObject, CLLocationManagerDelegate{
     
     @objc func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
         manager.stopUpdatingLocation()
+        manager.startUpdatingLocation()
     }
     
     // MARK: Reminder managing functions
@@ -80,9 +80,20 @@ class ReminderClient: NSObject, CLLocationManagerDelegate{
         return isSuccessfulSave
     }
     
+    func updateReminder(updateId: String, newType: String, newSpecifier: String, newReminderBody : String) {
+        for reminder in self.getAllReminders() {
+            if(reminder.id == updateId){
+                if(reminder.type == newType){
+                    //Simple Case
+                    reminder.specifier = newSpecifier
+                    reminder.reminderBody = newReminderBody
+                }
+            }
+        }
+    }
+    
     func getAllReminders() -> [Reminder] {
         return nearClient.reminders + withClient.reminders
     }
     
-    // TODO - implement remove reminder
 }

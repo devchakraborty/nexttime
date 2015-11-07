@@ -12,7 +12,7 @@ import MapKit
 
 class NearClient {
     var reminders : [Reminder]
-    let distanceThreshold = 100.0 // metres
+    let distanceThreshold = 500.0 // metres
     
     init() {
         reminders = [Reminder]()

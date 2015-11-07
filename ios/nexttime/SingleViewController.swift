@@ -56,6 +56,8 @@ class SingleViewController: UIViewController, MLPAutoCompleteTextFieldDelegate, 
         specifierField!.text = defaultSpecifierText
         reminderBodyView!.text = defaultReminderBodyText
         
+        let reminderClient = ReminderClient()
+        
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
@@ -94,10 +96,15 @@ class SingleViewController: UIViewController, MLPAutoCompleteTextFieldDelegate, 
     @IBAction func doCreate(sender:AnyObject) {
         print("Create")
 
+        let newType = typeControl!.selectedSegmentIndex == 0 ? "with" : "near"
+        let newSpecifier = specifierField!.text!
+        let newReminderBody = reminderBodyView!.text
+        
         if updateId == nil {
-            ReminderClient.sharedClient().addReminder(Reminder(type: typeControl!.selectedSegmentIndex == 0 ? "with" : "near", specifier: specifierField!.text!, reminderBody: reminderBodyView!.text))
+            ReminderClient.sharedClient().addReminder(Reminder(type: newType, specifier: newSpecifier, reminderBody: newReminderBody))
         } else {
             //TODO: Update reminder
+            ReminderClient.sharedClient().updateReminder(updateId!, newType: newType, newSpecifier: newSpecifier, newReminderBody: newReminderBody)
         }
         self.navigationController?.popViewControllerAnimated(true)
     }
