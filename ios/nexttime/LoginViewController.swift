@@ -14,31 +14,44 @@ import FBSDKLoginKit
 
 class LoginViewController: UIViewController {
     
-    @IBOutlet weak var loginButton: FBSDKLoginButton!
+    @IBOutlet weak var loginButton: UIButton!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let loginButton: FBSDKLoginButton = FBSDKLoginButton()
-        loginButton.center = self.view.center
-        loginButton.readPermissions = ["user_friends"]
-        self.view.addSubview(loginButton)
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
     
-
+    @IBAction func facebookLogin(sender: AnyObject) {
+        let login = FBSDKLoginManager()
+        
+        login.logInWithReadPermissions(["user_friends"], fromViewController: self) { (result: FBSDKLoginManagerLoginResult!, error:NSError!) in
+            if (error != nil) {
+                NSLog("Process error")
+            }
+            else {
+                NSLog("Logged in")
+                self.performSegueWithIdentifier("enterApp", sender: self.loginButton)
+            }
+            
+        }
+    }
+    
+    
+    
     /*
     // MARK: - Navigation
-
+    
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    // Get the new view controller using segue.destinationViewController.
+    // Pass the selected object to the new view controller.
     }
     */
-
+    
 }
