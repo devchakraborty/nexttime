@@ -22,18 +22,18 @@ class NearClient {
         reminders.append(reminder)
     }
     
-    func getClosestSearchResult(location: CLLocation, searchQuery: String)->CLLocation? {
+    func getClosestSearchResult(location: CLLocation, reminder: Reminder,
+            onReminderTriggered: (Reminder) -> Void) {
         let searchRequest = MKLocalSearchRequest()
         
         let span = MKCoordinateSpanMake(0.05, 0.05)
         let location2d = CLLocationCoordinate2DMake(location.coordinate.latitude, location.coordinate.longitude)
         let searchRegion = MKCoordinateRegion(center: location2d, span: span)
         
-        searchRequest.naturalLanguageQuery = searchQuery
+        searchRequest.naturalLanguageQuery = reminder.specifier
         searchRequest.region = searchRegion
         
         let search = MKLocalSearch(request: searchRequest)
-        var closestMatch : CLLocation?
         
         search.startWithCompletionHandler({(response: Optional<MKLocalSearchResponse>,
             error: Optional<NSError>) in
@@ -48,28 +48,20 @@ class NearClient {
                 for item in response!.mapItems {
                     let itemLocation = item.placemark.location
                     if (itemLocation?.distanceFromLocation(location) < self.distanceThreshold) {
-                        // Could also get the closest, rather than just the first matching
-                        closestMatch = itemLocation
+                        onReminderTriggered(reminder)
                     }
                 }
             }
         })
-        
-        return closestMatch
     }
     
-    func checkReminders(currentLocation: CLLocation)->[Reminder] {
-        var matchingReminders = [Reminder]()
+    func checkReminders(currentLocation: CLLocation, onReminderTriggered: (Reminder) -> Void) {
         // for each reminder in reminders,
         //    Google Maps search for the reminder query (getting closest match)
-        //    See if within 100m, if so add to matching reminders
+        //    See if within 100m, if so call onReminderTriggered
         for reminder in reminders {
-            let closestSearchResult = getClosestSearchResult(currentLocation, searchQuery: reminder.specifier)
-            if closestSearchResult != nil {
-                matchingReminders.append(reminder)
-            }
+            getClosestSearchResult(currentLocation, reminder: reminder, onReminderTriggered: onReminderTriggered)
         }
-        return matchingReminders
     }
 }
     

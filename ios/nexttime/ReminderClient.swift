@@ -46,6 +46,8 @@ class ReminderClient {
     }
     
     func getAllReminders() -> [Reminder] {
-        return [Reminder(type: "with", specifier: "Arkady Arkhangorodsky", reminderBody: "pay back $300")]
+        return nearClient.reminders + withClient.reminders
     }
+    
+    // TODO - implement remove reminder
 }
