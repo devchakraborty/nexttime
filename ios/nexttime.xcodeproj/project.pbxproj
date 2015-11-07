@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		88B41E0D1BEDB57E000C24DE /* NearClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B41E0C1BEDB57E000C24DE /* NearClient.swift */; };
+		88B41E0F1BEDB6F4000C24DE /* Reminder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B41E0E1BEDB6F4000C24DE /* Reminder.swift */; };
+		88B41E111BEDBC5E000C24DE /* WithClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B41E101BEDBC5E000C24DE /* WithClient.swift */; };
+		88B41E131BEDBCE0000C24DE /* ReminderClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B41E121BEDBCE0000C24DE /* ReminderClient.swift */; };
 		D7E19B291BEDACF900E6533D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7E19B281BEDACF900E6533D /* AppDelegate.swift */; };
 		D7E19B2B1BEDACF900E6533D /* SingleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7E19B2A1BEDACF900E6533D /* SingleViewController.swift */; };
 		D7E19B2E1BEDACF900E6533D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7E19B2C1BEDACF900E6533D /* Main.storyboard */; };
@@ -16,6 +20,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		88B41E0C1BEDB57E000C24DE /* NearClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NearClient.swift; path = ../NearClient.swift; sourceTree = "<group>"; };
+		88B41E0E1BEDB6F4000C24DE /* Reminder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reminder.swift; sourceTree = "<group>"; };
+		88B41E101BEDBC5E000C24DE /* WithClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WithClient.swift; sourceTree = "<group>"; };
+		88B41E121BEDBCE0000C24DE /* ReminderClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReminderClient.swift; sourceTree = "<group>"; };
 		D7E19B251BEDACF900E6533D /* nexttime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = nexttime.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7E19B281BEDACF900E6533D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D7E19B2A1BEDACF900E6533D /* SingleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleViewController.swift; sourceTree = "<group>"; };
@@ -56,6 +64,8 @@
 		D7E19B271BEDACF900E6533D /* nexttime */ = {
 			isa = PBXGroup;
 			children = (
+				88B41E0C1BEDB57E000C24DE /* NearClient.swift */,
+				88B41E0E1BEDB6F4000C24DE /* Reminder.swift */,
 				D7E19B281BEDACF900E6533D /* AppDelegate.swift */,
 				D7E19B2A1BEDACF900E6533D /* SingleViewController.swift */,
 				D7E19B2C1BEDACF900E6533D /* Main.storyboard */,
@@ -63,6 +73,8 @@
 				D7E19B341BEDACF900E6533D /* LaunchScreen.storyboard */,
 				D7E19B371BEDACF900E6533D /* Info.plist */,
 				D7E19B2F1BEDACF900E6533D /* nexttime.xcdatamodeld */,
+				88B41E101BEDBC5E000C24DE /* WithClient.swift */,
+				88B41E121BEDBCE0000C24DE /* ReminderClient.swift */,
 			);
 			path = nexttime;
 			sourceTree = "<group>";
@@ -138,9 +150,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				88B41E0D1BEDB57E000C24DE /* NearClient.swift in Sources */,
 				D7E19B2B1BEDACF900E6533D /* SingleViewController.swift in Sources */,
+				88B41E111BEDBC5E000C24DE /* WithClient.swift in Sources */,
+				88B41E131BEDBCE0000C24DE /* ReminderClient.swift in Sources */,
 				D7E19B311BEDACF900E6533D /* nexttime.xcdatamodeld in Sources */,
 				D7E19B291BEDACF900E6533D /* AppDelegate.swift in Sources */,
+				88B41E0F1BEDB6F4000C24DE /* Reminder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -288,6 +304,7 @@
 				D7E19B3C1BEDACF900E6533D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
