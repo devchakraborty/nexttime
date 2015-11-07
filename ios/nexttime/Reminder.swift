@@ -26,10 +26,10 @@ class Reminder: NSObject, NSCoding {
     }
     
     // MARK: Initialization
-    init(type: String, specifier: String, specifierId: String, reminderBody: String) {
+    init(type: String, specifier: String, reminderBody: String) {
         self.type = type
         self.specifier = specifier
-        self.specifierId = specifierId
+        self.specifierId = NSUUID().UUIDString
         self.reminderBody = reminderBody
         self.id = NSUUID().UUIDString
         

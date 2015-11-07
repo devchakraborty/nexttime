@@ -73,8 +73,8 @@ class ReminderClient: NSObject, CLLocationManagerDelegate{
         }
     }
     
-    func createReminder(type: String, specifier: String, specifierId: String, reminderBody: String)->Bool{
-        let newReminder = Reminder(type: type, specifier: specifier, specifierId: specifierId, reminderBody: reminderBody)
+    func createReminder(type: String, specifier: String, reminderBody: String)->Bool{
+        let newReminder = Reminder(type: type, specifier: specifier, reminderBody: reminderBody)
         addReminder(newReminder)
         let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(newReminder, toFile: ReminderClient.ArchiveURL.path!)
         return isSuccessfulSave

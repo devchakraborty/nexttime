@@ -42,4 +42,3 @@ class LoginViewController: UIViewController {
     */
 
 }
->>>>>>> e6d5b201bed6eadcae3831edf5f991a365d63327
