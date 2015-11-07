@@ -1,6 +1,0 @@
-version: "Apple Swift version 2.1 (swiftlang-700.1.101.6 clang-700.1.76)"
-options: "28405944a82d770ea9472fd32555501b"
-build_time: [500183547, 485065000]
-inputs:
-  "/Users/dev/Google Drive/Development/nexttime/nexttime/nexttime/ViewController.swift": [500183545, 0]
-  "/Users/dev/Google Drive/Development/nexttime/nexttime/nexttime/AppDelegate.swift": [500183545, 0]
