@@ -8,32 +8,17 @@
 
 import UIKit
 
-class LoginViewController: UIViewController, FBLoginViewDelegate {
+import FBSDKShareKit
+import FBSDKCoreKit
+import FBSDKLoginKit
 
-    @IBOutlet var fbLoginView : FBLoginView!
+class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.fbLoginView.delegate = self
-        self.fbLoginView.readPermissions = ["public_profile", "email", "user_friends"]
-        // Do any additional setup after loading the view.
-    }
-    
-    func loginViewShowingLoggedInUser(loginView : FBLoginView) {
-        println("User Logged In")
-        println("This is where you perform a segue.")
-    }
-    
-    func loginViewFetchedUserInfo(loginView : FBLoginView!, user: FBGraphUser) {
-        println("User Name : \(user.name)")
-    }
-    
-    func loginViewShowingLoggedOutUser(loginView : FBLoginView) {
-        println("User Logged Out")
-    }
-    
-    func loginView(loginview : FBLoginView!, handleError:NSERror) {
-        println("Error: \(handleError.localizedDescription)")
+        let loginButton: FBSDKLoginButton = FBSDKLoginButton()
+        loginButton.center = self.view.center
+        self.view.addSubview(loginButton)
     }
 
     override func didReceiveMemoryWarning() {
