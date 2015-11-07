@@ -1,0 +1,13 @@
+PODS:
+  - GoogleMaps (1.10.5)
+  - MLPAutoCompleteTextField (1.5)
+
+DEPENDENCIES:
+  - GoogleMaps
+  - MLPAutoCompleteTextField
+
+SPEC CHECKSUMS:
+  GoogleMaps: da51c62c338c2d9c47cdad470a0d1e0e4b8544e4
+  MLPAutoCompleteTextField: ba4d507bbff2bd4f139d4197814fc8dd39caf77e
+
+COCOAPODS: 0.39.0

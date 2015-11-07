@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Login View Controller-->
@@ -48,11 +49,11 @@
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ListCell" rowHeight="70" id="Ilf-PU-AwR" customClass="ListViewCell" customModule="nexttime" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="ListCell" rowHeight="70" id="Ilf-PU-AwR" customClass="ListViewCell" customModule="nexttime" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="92" width="320" height="70"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Ilf-PU-AwR" id="7x2-0J-dPC">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="69"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="287" height="69"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="context" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fm7-fq-UL1">
@@ -76,6 +77,7 @@
                                 <connections>
                                     <outlet property="contextLabel" destination="fm7-fq-UL1" id="Ym1-vk-iAC"/>
                                     <outlet property="reminderLabel" destination="ucN-3y-7yY" id="gli-oS-zPq"/>
+                                    <segue destination="Kwk-RL-LOg" kind="push" identifier="toSingleUpdate" id="NuG-1C-qYq"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -86,9 +88,14 @@
                     </tableView>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="All Reminders" id="WjU-gH-pfZ">
+                        <barButtonItem key="leftBarButtonItem" title="Logout" id="gjg-Jf-j6P">
+                            <connections>
+                                <action selector="doLogout:" destination="qPB-Hf-Iy9" id="noI-FZ-eL9"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="zdo-nQ-SeU">
                             <connections>
-                                <segue destination="Kwk-RL-LOg" kind="push" id="VbK-K2-PjR"/>
+                                <segue destination="Kwk-RL-LOg" kind="push" identifier="toSingleNew" id="VbK-K2-PjR"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -109,10 +116,64 @@
                     <view key="view" contentMode="scaleToFill" id="tnZ-mU-5uo">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Next time I'm..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1RE-HI-9Ds">
+                                <rect key="frame" x="103" y="72" width="115" height="21"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="U3F-y7-y0h">
+                                <rect key="frame" x="117" y="101" width="87" height="29"/>
+                                <animations/>
+                                <segments>
+                                    <segment title="With"/>
+                                    <segment title="Near"/>
+                                </segments>
+                                <connections>
+                                    <action selector="didChangeType:" destination="Kwk-RL-LOg" eventType="valueChanged" id="QmR-XS-F5Y"/>
+                                </connections>
+                            </segmentedControl>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter a friend's name (e.g. Bart)..." textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jQX-A0-yCY" customClass="MLPAutoCompleteTextField">
+                                <rect key="frame" x="20" y="137" width="280" height="30"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="8jf-rW-gVv">
+                                <rect key="frame" x="20" y="175" width="280" height="341"/>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="jQX-A0-yCY" firstAttribute="centerX" secondItem="U3F-y7-y0h" secondAttribute="centerX" id="3PK-re-D7o"/>
+                            <constraint firstItem="U3F-y7-y0h" firstAttribute="top" secondItem="1RE-HI-9Ds" secondAttribute="bottom" constant="8" symbolic="YES" id="SYW-mw-qbx"/>
+                            <constraint firstItem="1RE-HI-9Ds" firstAttribute="centerX" secondItem="tnZ-mU-5uo" secondAttribute="centerX" id="St3-G5-iif"/>
+                            <constraint firstItem="jQX-A0-yCY" firstAttribute="leading" secondItem="tnZ-mU-5uo" secondAttribute="leadingMargin" constant="4" id="TWx-y3-amL"/>
+                            <constraint firstItem="1RE-HI-9Ds" firstAttribute="top" secondItem="kwe-VR-dMh" secondAttribute="bottom" constant="8" symbolic="YES" id="a5c-AF-Uw7"/>
+                            <constraint firstItem="jQX-A0-yCY" firstAttribute="top" secondItem="U3F-y7-y0h" secondAttribute="bottom" constant="8" symbolic="YES" id="iBS-7Z-jq0"/>
+                            <constraint firstItem="U3F-y7-y0h" firstAttribute="centerX" secondItem="1RE-HI-9Ds" secondAttribute="centerX" id="tX1-YS-u0f"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="7s0-zI-7N5"/>
+                    <navigationItem key="navigationItem" id="7s0-zI-7N5">
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="dZv-u6-pXV">
+                            <connections>
+                                <action selector="doCreate:" destination="Kwk-RL-LOg" id="R4C-m9-sbf"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="doneButton" destination="dZv-u6-pXV" id="uTc-5e-3qv"/>
+                        <outlet property="reminderBodyView" destination="8jf-rW-gVv" id="cZN-Gp-gsl"/>
+                        <outlet property="specifierField" destination="jQX-A0-yCY" id="hTm-kI-GAT"/>
+                        <outlet property="typeControl" destination="U3F-y7-y0h" id="XpL-io-073"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="myB-1o-ve6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -136,4 +197,7 @@
             <point key="canvasLocation" x="574" y="351"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="NuG-1C-qYq"/>
+    </inferredMetricsTieBreakers>
 </document>

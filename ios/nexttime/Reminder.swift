@@ -14,7 +14,7 @@ class Reminder: NSObject, NSCoding {
     var type: String
     var specifier: String
     var reminderBody: String
-    var id: Int?
+    var id: String
     
     struct PropertyKey {
         static let type = "type"
@@ -28,12 +28,12 @@ class Reminder: NSObject, NSCoding {
         self.type = type
         self.specifier = specifier
         self.reminderBody = reminderBody
+        self.id = NSUUID().UUIDString
         
         super.init()
-        self.id = self.hashValue
     }
     
-    init(type: String, specifier: String, reminderBody: String, id: Int) {
+    init(type: String, specifier: String, reminderBody: String, id: String) {
         self.type = type
         self.specifier = specifier
         self.reminderBody = reminderBody
@@ -51,7 +51,7 @@ class Reminder: NSObject, NSCoding {
         let type = aDecoder.decodeObjectForKey(PropertyKey.type) as! String
         let specifier = aDecoder.decodeObjectForKey(PropertyKey.specifier) as! String
         let reminderBody = aDecoder.decodeObjectForKey(PropertyKey.reminderBody) as! String
-        let id = aDecoder.decodeObjectForKey(PropertyKey.id) as! Int
+        let id = aDecoder.decodeObjectForKey(PropertyKey.id) as! String
         self.init(type: type, specifier: specifier, reminderBody : reminderBody, id: id)
      }
 }
