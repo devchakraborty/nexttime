@@ -12,16 +12,22 @@ class ReminderClient {
     static let DocumentsDirectory = NSFileManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask).first!
     static let ArchiveURL = DocumentsDirectory.URLByAppendingPathComponent("reminders")
     
+    static let shared = ReminderClient()
+    
     var nearClient: NearClient
     var withClient: WithClient
     
     init() {
         nearClient = NearClient()
         withClient = WithClient()
-        let reminders = NSKeyedUnarchiver.unarchiveObjectWithFile(ReminderClient.ArchiveURL.path!) as? [Reminder]
-        for reminder in reminders! {
+        let reminders = NSKeyedUnarchiver.unarchiveObjectWithFile(ReminderClient.ArchiveURL.path!) as? [Reminder] ?? []
+        for reminder in reminders {
             addReminder(reminder)
         }
+    }
+    
+    static func sharedClient()->ReminderClient {
+        return shared
     }
     
     func addReminder(reminder: Reminder) {
@@ -37,5 +43,9 @@ class ReminderClient {
         addReminder(newReminder)
         let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(newReminder, toFile: ReminderClient.ArchiveURL.path!)
         return isSuccessfulSave
+    }
+    
+    func getAllReminders() -> [Reminder] {
+        return [Reminder(type: "with", specifier: "Arkady Arkhangorodsky", reminderBody: "pay back $300")]
     }
 }
