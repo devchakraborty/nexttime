@@ -19,6 +19,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        FBLoginView.self
 //        FBProfilePictureView.self
         // Override point for customization after application launch.
+        
+        // Setup user for local notifications
+    
+        // TODO: Set up badge , sound notifications
+        
+        application.registerUserNotificationSettings(UIUserNotificationSettings(forTypes: UIUserNotificationType.Alert, categories: nil))
+            
         return true
     }
 
