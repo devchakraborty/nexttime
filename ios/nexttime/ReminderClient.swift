@@ -39,5 +39,9 @@ class ReminderClient {
         return isSuccessfulSave
     }
     
+    func getAllReminders() -> [Reminder] {
+        return nearClient.reminders + withClient.reminders
+    }
+    
     // TODO - implement remove reminder
 }
