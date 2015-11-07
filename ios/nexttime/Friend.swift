@@ -17,7 +17,7 @@ class Friend: NSObject, NSCoding, MLPAutoCompletionObject {
     var lastName:String
     
     struct PropertyKey {
-        static let id = "id"
+        static let id = "friendId"
         static let firstName = "firstName"
         static let lastName = "lastName"
     }
