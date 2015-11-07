@@ -9,7 +9,7 @@
 import UIKit
 import CoreLocation
 import FBSDKCoreKit
-// import something for Parse
+import MapKit
 
 class WithClient {
     var reminders : [Reminder]
@@ -36,5 +36,26 @@ class WithClient {
     func checkReminders(currentLocation: CLLocation, onReminderTriggered: (Reminder) -> Void) {
         // find which reminders should be activated (wrapper for findCloseFriends)
         findCloseFriends(currentLocation, onReminderTriggered: onReminderTriggered)
+    }
+    
+    func generateFriend(id: String, firstName: String, lastName: String) -> Friend {
+        /* Generate Friend object given
+        id : String
+        firstName: String
+        lastName: String
+        */
+        let friend = Friend.init(id: id, firstName: firstName, lastName: lastName)
+        return friend
+    }
+    
+    func generateLocation(longitude: Double, latitude: Double) -> CLLocation {
+        /* Generate CLLocation object given
+        longitude: Double
+        latitutde: Double
+        */
+        let latitude = CLLocationDegrees.init(latitude)
+        let longitude = CLLocationDegrees.init(longitude)
+        let location = CLLocation.init(latitude: latitude, longitude: longitude)
+        return location
     }
 }
