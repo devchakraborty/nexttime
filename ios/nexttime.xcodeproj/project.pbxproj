@@ -11,6 +11,10 @@
 		88B41E0F1BEDB6F4000C24DE /* Reminder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B41E0E1BEDB6F4000C24DE /* Reminder.swift */; };
 		88B41E111BEDBC5E000C24DE /* WithClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B41E101BEDBC5E000C24DE /* WithClient.swift */; };
 		88B41E131BEDBCE0000C24DE /* ReminderClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B41E121BEDBCE0000C24DE /* ReminderClient.swift */; };
+		A1628EA31BEE572A008F6BC7 /* LoginClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1628EA21BEE572A008F6BC7 /* LoginClient.swift */; };
+		A1628EB21BEE5ED6008F6BC7 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1628EB01BEE5ED5008F6BC7 /* FBSDKCoreKit.framework */; };
+		A1628EB31BEE5ED6008F6BC7 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1628EB11BEE5ED6008F6BC7 /* FBSDKLoginKit.framework */; };
+		A1628EB51BEE5F10008F6BC7 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1628EB41BEE5F10008F6BC7 /* FBSDKShareKit.framework */; };
 		D726DA991BEDD8A7001A9E6E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D726DA981BEDD8A7001A9E6E /* LoginViewController.swift */; };
 		D726DA9B1BEDD93E001A9E6E /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D726DA9A1BEDD93E001A9E6E /* ListViewController.swift */; };
 		D726DA9D1BEDE1B8001A9E6E /* ListViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D726DA9C1BEDE1B8001A9E6E /* ListViewCell.swift */; };
@@ -27,6 +31,10 @@
 		88B41E0E1BEDB6F4000C24DE /* Reminder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reminder.swift; sourceTree = "<group>"; };
 		88B41E101BEDBC5E000C24DE /* WithClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WithClient.swift; sourceTree = "<group>"; };
 		88B41E121BEDBCE0000C24DE /* ReminderClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReminderClient.swift; sourceTree = "<group>"; };
+		A1628EA21BEE572A008F6BC7 /* LoginClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginClient.swift; sourceTree = "<group>"; };
+		A1628EB01BEE5ED5008F6BC7 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = ../../../../../../Documents/FacebookSDK/FBSDKCoreKit.framework; sourceTree = "<group>"; };
+		A1628EB11BEE5ED6008F6BC7 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = ../../../../../../Documents/FacebookSDK/FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		A1628EB41BEE5F10008F6BC7 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKShareKit.framework; path = ../../../../../../Documents/FacebookSDK/FBSDKShareKit.framework; sourceTree = "<group>"; };
 		D726DA981BEDD8A7001A9E6E /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		D726DA9A1BEDD93E001A9E6E /* ListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		D726DA9C1BEDE1B8001A9E6E /* ListViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListViewCell.swift; sourceTree = "<group>"; };
@@ -45,15 +53,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A1628EB31BEE5ED6008F6BC7 /* FBSDKLoginKit.framework in Frameworks */,
+				A1628EB21BEE5ED6008F6BC7 /* FBSDKCoreKit.framework in Frameworks */,
+				A1628EB51BEE5F10008F6BC7 /* FBSDKShareKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A1628EAB1BEE5E4F008F6BC7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A1628EB41BEE5F10008F6BC7 /* FBSDKShareKit.framework */,
+				A1628EB01BEE5ED5008F6BC7 /* FBSDKCoreKit.framework */,
+				A1628EB11BEE5ED6008F6BC7 /* FBSDKLoginKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		D7E19B1C1BEDACF900E6533D = {
 			isa = PBXGroup;
 			children = (
+				A1628EAB1BEE5E4F008F6BC7 /* Frameworks */,
 				D7E19B271BEDACF900E6533D /* nexttime */,
 				D7E19B261BEDACF900E6533D /* Products */,
 			);
@@ -84,6 +106,7 @@
 				88B41E101BEDBC5E000C24DE /* WithClient.swift */,
 				88B41E121BEDBCE0000C24DE /* ReminderClient.swift */,
 				D726DA981BEDD8A7001A9E6E /* LoginViewController.swift */,
+				A1628EA21BEE572A008F6BC7 /* LoginClient.swift */,
 			);
 			path = nexttime;
 			sourceTree = "<group>";
@@ -165,6 +188,7 @@
 				88B41E111BEDBC5E000C24DE /* WithClient.swift in Sources */,
 				88B41E131BEDBCE0000C24DE /* ReminderClient.swift in Sources */,
 				D726DA991BEDD8A7001A9E6E /* LoginViewController.swift in Sources */,
+				A1628EA31BEE572A008F6BC7 /* LoginClient.swift in Sources */,
 				D726DA9B1BEDD93E001A9E6E /* ListViewController.swift in Sources */,
 				D7E19B311BEDACF900E6533D /* nexttime.xcdatamodeld in Sources */,
 				D7E19B291BEDACF900E6533D /* AppDelegate.swift in Sources */,
