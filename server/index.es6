@@ -175,4 +175,4 @@ app.delete('/reminders/:id', idParamCheck, fbIDCheck, errorCheck, (req, res) => 
 	res.status(200).end()
 })
 
-app.listen(3000)
+app.listen(process.env.PORT || 3000)
