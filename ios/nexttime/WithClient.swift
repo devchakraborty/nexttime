@@ -10,16 +10,34 @@ import UIKit
 import CoreLocation
 import FBSDKCoreKit
 import MapKit
+import Firebase
 
 class WithClient {
     var reminders : [Reminder]
+    var onReminderTriggered : (Reminder) -> Void
+    var latestLocation : CLLocation
     
-    init() {
+    let distanceThreshold = 100.0
+    
+    init(onReminderTriggered : (Reminder) -> Void) {
         reminders = [Reminder]()
+        self.onReminderTriggered = onReminderTriggered
+        self.latestLocation = CLLocation(latitude: CLLocationDegrees(37.78),
+                                        longitude: CLLocationDegrees(-122.41))
     }
     
     func addReminder(reminder: Reminder) {
         reminders.append(reminder)
+        let facebookId = "10208061141865664"
+        let firebaseRef = Firebase(url: "https://nexttime.firebaseio.com/locations/" + facebookId)
+        firebaseRef.observeEventType(.ChildChanged, withBlock: {snapshot in
+            var latitude = CLLocationDegrees(snapshot.value.objectForKey("lat") as! Double)
+            var longitude = CLLocationDegrees(snapshot.value.objectForKey("lng") as! Double)
+            let newFriendLocation = CLLocation(latitude: latitude, longitude: longitude)
+            if (newFriendLocation.distanceFromLocation(self.latestLocation) < self.distanceThreshold) {
+                self.onReminderTriggered(reminder)
+            }
+        })
     }
     
     func findCloseFriends(location: CLLocation, onReminderTriggered: (Reminder) -> Void) {
@@ -46,6 +64,10 @@ class WithClient {
         */
         let friend = Friend.init(id: id, name: name)
         return friend
+    }
+    
+    func updateLocation(newLocation: CLLocation) {
+        self.latestLocation = newLocation
     }
     
     func generateLocation(longitude: Double, latitude: Double) -> CLLocation {
