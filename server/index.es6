@@ -9,7 +9,7 @@ let gmAPI = new googlemaps({
 	key: "AIzaSyDotZw0DuUGQoEW_6P8Ka0_j1LS4HoyC2I",
 	secure: true
 })
-let apn = require('node-apn')
+let apn = require('apn')
 
 const MAX_DIST_NOTIF = 5.0 // KM
 
@@ -113,6 +113,7 @@ app.post('/location', fbIDCheck, errorCheck, (req, res) => {
 
 				if (distance <= MAX_DIST_NOTIF) {
 					console.log("PUSH", fbID, people[fbID].deviceToken, reminders[fbID][reminder.id])
+					// let notif = new 
 				}
 			})
 
@@ -174,4 +175,4 @@ app.delete('/reminders/:id', idParamCheck, fbIDCheck, errorCheck, (req, res) => 
 	res.status(200).end()
 })
 
-app.listen(3000)
+app.listen(process.env.PORT || 3000)
