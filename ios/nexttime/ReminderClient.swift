@@ -13,20 +13,22 @@ class ReminderClient: NSObject, CLLocationManagerDelegate{
     static let DocumentsDirectory = NSFileManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask).first!
     static let ArchiveURL = DocumentsDirectory.URLByAppendingPathComponent("reminders")
     
-    static let shared = ReminderClient()
+    static var shared = ReminderClient()
     
     var nearClient: NearClient
-    var withClient: WithClient
+    var withClient: WithClient?
     var locationManager: CLLocationManager?
+    var facebookId: String?
     
     var notifTimes : [String:NSDate]
     
     override init() {
         nearClient = NearClient()
-        withClient = WithClient()
         notifTimes = [String:NSDate]()
         
         super.init()
+        withClient = WithClient(onReminderTriggered: self.onReminderTriggered)
+        
         
         locationManager = initLocationManager()
         
@@ -109,7 +111,7 @@ class ReminderClient: NSObject, CLLocationManagerDelegate{
         if reminder.type == "near" {
             nearClient.addReminder(reminder)
         } else {
-            withClient.addReminder(reminder)
+            withClient!.addReminder(reminder)
         }
     }
     
@@ -126,7 +128,7 @@ class ReminderClient: NSObject, CLLocationManagerDelegate{
                 if (reminder.type == "near") {
                     nearClient.removeReminder(reminder)
                 } else {
-                    withClient.removeReminder(reminder)
+                    withClient!.removeReminder(reminder)
                 }
             }
         }
@@ -145,7 +147,7 @@ class ReminderClient: NSObject, CLLocationManagerDelegate{
     }
     
     func getAllReminders() -> [Reminder] {
-        return nearClient.reminders + withClient.reminders
+        return nearClient.reminders + withClient!.reminders
     }
     
     func getReminder(id:String) -> Reminder? {
