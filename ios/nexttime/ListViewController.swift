@@ -24,6 +24,8 @@ class ListViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "didResume:", name: UIApplicationWillEnterForegroundNotification, object: nil)
+        
+        self.tableView.allowsMultipleSelectionDuringEditing = false
     }
     
     func didResume(notif:NSNotification) {
@@ -66,12 +68,18 @@ class ListViewController: UITableViewController {
 
         return cell
     }
-
-
-    // Override to support conditional editing of the table view.
+    
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return false
+        return true
+    }
+    
+    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        if editingStyle == .Delete {
+            let reminder = reminders[indexPath.row]
+            ReminderClient.sharedClient().completeReminder(reminder.id)
+            reminders = ReminderClient.sharedClient().getAllReminders()
+            self.tableView.reloadData()
+        }
     }
 
     /*

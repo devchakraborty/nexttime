@@ -59,6 +59,10 @@ class SingleViewController: UIViewController, MLPAutoCompleteTextFieldDelegate, 
         
         let reminderClient = ReminderClient()
         
+        reminderBodyView.layer.borderWidth = 1
+        reminderBodyView.layer.borderColor = UIColor.lightGrayColor().CGColor
+        reminderBodyView.layer.cornerRadius = 5.0
+        
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
