@@ -157,11 +157,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         }
     }
-    
-    func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData!) {
-        print("Got token data! \(deviceToken)")
-    }
-
 
 }
 
