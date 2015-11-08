@@ -33,6 +33,7 @@ class LoginViewController: UIViewController {
     
     func loginButtonClicked() {
         let login: FBSDKLoginManager = FBSDKLoginManager()
+        let fromViewController = self
         login.logInWithReadPermissions(["user_friends"], fromViewController: self,
             handler: {(result: FBSDKLoginManagerLoginResult!, error:NSError!)-> Void in
                 if (error != nil) {
@@ -50,11 +51,14 @@ class LoginViewController: UIViewController {
                             print(error)
                         }else{
                             print(result)
+                            fromViewController.moveToReminders()
                         }
                     })
                 }
         })
-        
+    }
+    
+    func moveToReminders() {
         self.performSegueWithIdentifier("enterApp", sender: self)
     }
     
