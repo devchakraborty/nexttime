@@ -48,7 +48,7 @@ class LoginViewController: UIViewController {
                         if(error != nil){
                             print(error)
                         }else{
-                            ReminderClient.sharedClient().facebookId = (result as! NSDictionary)["id"] as! String
+                            ReminderClient.sharedClient().updateFacebookId((result as! NSDictionary)["id"] as! String)
                         }
                     })
                     

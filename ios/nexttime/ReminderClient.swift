@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreLocation
+import Firebase
 
 class ReminderClient: NSObject, CLLocationManagerDelegate{
     static let DocumentsDirectory = NSFileManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask).first!
@@ -57,6 +58,11 @@ class ReminderClient: NSObject, CLLocationManagerDelegate{
         return newLocationManager
     }
     
+    func updateFacebookId(facebookId : String) {
+        self.facebookId = facebookId
+        self.withClient!.facebookId = facebookId
+    }
+    
     static func sharedClient()->ReminderClient {
         return shared
     }
@@ -64,8 +70,14 @@ class ReminderClient: NSObject, CLLocationManagerDelegate{
         // MARK: Delegate functions
         @objc func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
             let latestLocation = locations[locations.count-1]
-            // TODO: Send updated location to server
-    
+            if (facebookId != nil) {
+                let latestLocation = locations[locations.count-1]
+                // TODO: Send updated location to server
+                let firebaseRef = Firebase(url: "https://nexttime.firebaseio.com/locations/" + facebookId!)
+                firebaseRef.setValue(["lat": latestLocation.coordinate.latitude, "lng": latestLocation.coordinate.longitude])
+                withClient!.updateLocation(latestLocation)
+                nearClient.checkReminders(latestLocation, onReminderTriggered : self.onReminderTriggered)
+            }
             nearClient.checkReminders(latestLocation, onReminderTriggered : self.onReminderTriggered)
         }
     

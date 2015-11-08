@@ -16,6 +16,7 @@ class WithClient {
     var reminders : [Reminder]
     var onReminderTriggered : (Reminder) -> Void
     var latestLocation : CLLocation
+    var facebookId : String?
     
     let distanceThreshold = 100.0
     
@@ -28,11 +29,10 @@ class WithClient {
     
     func addReminder(reminder: Reminder) {
         reminders.append(reminder)
-        let facebookId = "10208061141865664"
-        let firebaseRef = Firebase(url: "https://nexttime.firebaseio.com/locations/" + facebookId)
+        let firebaseRef = Firebase(url: "https://nexttime.firebaseio.com/locations/" + facebookId!)
         firebaseRef.observeEventType(.ChildChanged, withBlock: {snapshot in
-            var latitude = CLLocationDegrees(snapshot.value.objectForKey("lat") as! Double)
-            var longitude = CLLocationDegrees(snapshot.value.objectForKey("lng") as! Double)
+            let latitude = CLLocationDegrees(snapshot.value.objectForKey("lat") as! Double)
+            let longitude = CLLocationDegrees(snapshot.value.objectForKey("lng") as! Double)
             let newFriendLocation = CLLocation(latitude: latitude, longitude: longitude)
             if (newFriendLocation.distanceFromLocation(self.latestLocation) < self.distanceThreshold) {
                 self.onReminderTriggered(reminder)
