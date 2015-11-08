@@ -17,23 +17,12 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E3D-gO-cVa">
-                                <rect key="frame" x="90" y="269" width="141" height="30"/>
-                                <animations/>
-                                <state key="normal" title="Login with Facebook"/>
-                                <connections>
-                                    <segue destination="Mjb-Xj-Jxx" kind="modal" id="1uy-OT-QRU"/>
-                                </connections>
-                            </button>
-                        </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="E3D-gO-cVa" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="hTS-Hp-MeR"/>
-                            <constraint firstItem="E3D-gO-cVa" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="rkE-FN-0bp"/>
-                        </constraints>
                     </view>
+                    <connections>
+                        <segue destination="Mjb-Xj-Jxx" kind="modal" identifier="enterApp" id="iDX-DR-z69"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -183,6 +172,7 @@
         <scene sceneID="2jN-CG-vup">
             <objects>
                 <navigationController id="Mjb-Xj-Jxx" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="GSD-0w-94y"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="uAz-7A-b28">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>

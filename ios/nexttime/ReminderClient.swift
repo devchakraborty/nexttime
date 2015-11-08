@@ -53,6 +53,7 @@ class ReminderClient: NSObject, CLLocationManagerDelegate{
     @objc func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let latestLocation = locations[locations.count-1]
         // TODO: Send updated location to server
+        
         nearClient.checkReminders(latestLocation, onReminderTriggered : self.onReminderTriggered)
     }
     

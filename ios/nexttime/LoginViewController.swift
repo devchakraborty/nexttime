@@ -12,13 +12,19 @@ import FBSDKShareKit
 import FBSDKCoreKit
 import FBSDKLoginKit
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
     
-    @IBOutlet weak var loginButton: UIButton!
-    
+    @IBOutlet weak var loginButton: FBSDKLoginButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let loginButton = FBSDKLoginButton()
+        loginButton.center = self.view.center
+        loginButton.readPermissions = ["user_friends"]
+        self.view.addSubview(loginButton)
+        
+        loginButton.delegate = self
     }
     
     override func didReceiveMemoryWarning() {
@@ -26,20 +32,27 @@ class LoginViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    
-    @IBAction func facebookLogin(sender: AnyObject) {
-        let login = FBSDKLoginManager()
-        
-        login.logInWithReadPermissions(["user_friends"], fromViewController: self) { (result: FBSDKLoginManagerLoginResult!, error:NSError!) in
-            if (error != nil) {
-                NSLog("Process error")
-            }
-            else {
-                NSLog("Logged in")
-                self.performSegueWithIdentifier("enterApp", sender: self.loginButton)
-            }
+    func loginButton(loginButton: FBSDKLoginButton!, didCompleteWithResult result: FBSDKLoginManagerLoginResult!, error: NSError!) {
+        if (error == nil) {
+            //TODO: Post to login
+            let request = FBSDKGraphRequest.init(graphPath: "me/friends",
+                parameters: nil,
+                HTTPMethod: "GET")
             
+            request.startWithCompletionHandler({ (connection:FBSDKGraphRequestConnection!, result:AnyObject!, error:NSError!) -> Void in
+                if(error != nil){
+                    print(error)
+                }else{
+                    print(result)
+                }
+            })
+            
+            self.performSegueWithIdentifier("enterApp", sender: self)
         }
+    }
+    
+    func loginButtonDidLogOut(loginButton: FBSDKLoginButton!) {
+        print("Logged out")
     }
     
     
