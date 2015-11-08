@@ -46,7 +46,7 @@ class ReminderClient: NSObject, CLLocationManagerDelegate{
     func initLocationManager()->CLLocationManager{
         let newLocationManager = CLLocationManager()
         //newLocationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
-        newLocationManager.distanceFilter = 500
+        newLocationManager.distanceFilter = 1
         newLocationManager.headingFilter = 5
         let authStatus = CLLocationManager.authorizationStatus()
 
@@ -75,6 +75,7 @@ class ReminderClient: NSObject, CLLocationManagerDelegate{
                 let firebaseRef = Firebase(url: "https://nexttime.firebaseio.com/locations/" + facebookId!)
                 firebaseRef.setValue(["location":["lat": latestLocation.coordinate.latitude, "lng": latestLocation.coordinate.longitude]])
                 withClient!.updateLocation(latestLocation)
+                print("LOCATION", latestLocation.coordinate.latitude, latestLocation.coordinate.longitude)
                 nearClient.checkReminders(latestLocation, onReminderTriggered : self.onReminderTriggered)
             }
             nearClient.checkReminders(latestLocation, onReminderTriggered : self.onReminderTriggered)
