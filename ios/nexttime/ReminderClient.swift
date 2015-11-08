@@ -21,6 +21,8 @@ class ReminderClient: NSObject, CLLocationManagerDelegate{
     var locationManager: CLLocationManager?
     var facebookId: String?
     
+    var notifTimes : [String:NSDate]
+    
     override init() {
         nearClient = NearClient()
         
@@ -28,21 +30,24 @@ class ReminderClient: NSObject, CLLocationManagerDelegate{
         withClient = WithClient(onReminderTriggered : self.onReminderTriggered)
         locationManager = initLocationManager()
         locationManager!.startUpdatingLocation()
+        withClient = WithClient()
+        notifTimes = [String:NSDate]()
+        
         let reminders = NSKeyedUnarchiver.unarchiveObjectWithFile(ReminderClient.ArchiveURL.path!) as? [Reminder] ?? []
+        
         for reminder in reminders {
             addReminder(reminder)
         }
     }
     
-    func initLocationManager()->CLLocationManager{
+    func initLocationManager()->CLLocationManager {
         let newLocationManager = CLLocationManager()
         newLocationManager.distanceFilter = 500
         let authStatus = CLLocationManager.authorizationStatus()
         
-        if(authStatus == CLAuthorizationStatus.NotDetermined){
+        if (authStatus == CLAuthorizationStatus.NotDetermined) {
             newLocationManager.requestAlwaysAuthorization()
         }
-        newLocationManager.delegate = self
         
         return newLocationManager
     }
@@ -62,19 +67,23 @@ class ReminderClient: NSObject, CLLocationManagerDelegate{
             nearClient.checkReminders(latestLocation, onReminderTriggered : self.onReminderTriggered)
         }
     }
+
     
     @objc func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
         manager.stopUpdatingLocation()
         manager.startUpdatingLocation()
     }
-    
+
     // MARK: Reminder managing functions
     
     func onReminderTriggered(reminder: Reminder) {
-        localNotification(reminder)
-    }
-    
-    func localNotification( reminder : Reminder){
+        
+        let now = NSDate()
+        
+        if notifTimes[reminder.id] != nil && now.timeIntervalSinceDate((notifTimes[reminder.id])!) < 600 {
+            return
+        }
+        
         let notification = UILocalNotification()
         notification.alertAction = "Yes"
         notification.alertBody = "You are near " + reminder.specifier + ", " + reminder.reminderBody + "?"
@@ -84,15 +93,17 @@ class ReminderClient: NSObject, CLLocationManagerDelegate{
         
         notification.fireDate = NSDate(timeIntervalSinceNow: 5)
         
-//        let request = NSMutableURLRequest(URL: NSURL(string: "https://httpbin.org/get")!)
-//        print("Sending request")
-//        let response: AutoreleasingUnsafeMutablePointer<NSURLResponse?>=nil
-//        do {
-//            try print(NSURLConnection.sendSynchronousRequest(request, returningResponse: response))
-//        } catch {
-//            print("Chill")
-//        }
-//        
+        //        let request = NSMutableURLRequest(URL: NSURL(string: "https://httpbin.org/get")!)
+        //        print("Sending request")
+        //        let response: AutoreleasingUnsafeMutablePointer<NSURLResponse?>=nil
+        //        do {
+        //            try print(NSURLConnection.sendSynchronousRequest(request, returningResponse: response))
+        //        } catch {
+        //            print("Chill")
+        //        }
+        
+        notifTimes[reminder.id] = now
+        
         UIApplication.sharedApplication().scheduleLocalNotification(notification)
     }
     
