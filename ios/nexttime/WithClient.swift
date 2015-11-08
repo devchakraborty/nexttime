@@ -30,15 +30,12 @@ class WithClient {
         reminders.append(reminder)
         let firebaseRef = Firebase(url: "https://nexttime.firebaseio.com/locations/" + reminder.specifierId)
         firebaseRef.observeEventType(.ChildChanged, withBlock: {snapshot in
-            print(snapshot)
-            print(snapshot.value.objectForKey("lat"))
-            print(snapshot.value.objectForKey("lng"))
-//            let latitude = CLLocationDegrees(snapshot.value.objectForKey("lat") as! Double)
-//            let longitude = CLLocationDegrees(snapshot.value.objectForKey("lng") as! Double)
-//            let newFriendLocation = CLLocation(latitude: latitude, longitude: longitude)
-//            if (newFriendLocation.distanceFromLocation(self.latestLocation) < self.distanceThreshold) {
-//                self.onReminderTriggered(reminder)
-//            }
+            let latitude = CLLocationDegrees(snapshot.value.objectForKey("lat") as! Double)
+            let longitude = CLLocationDegrees(snapshot.value.objectForKey("lng") as! Double)
+            let newFriendLocation = CLLocation(latitude: latitude, longitude: longitude)
+            if (newFriendLocation.distanceFromLocation(self.latestLocation) < self.distanceThreshold) {
+                self.onReminderTriggered(reminder)
+            }
         })
     }
     
