@@ -14,8 +14,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-    let notificationActionWillDoIdent = "WILL_DO_IDENTIFIER"
+    let notificationActionCompleteIdent = "COMPLETE_IDENTIFIER"
     let notificationActionNextTimeIdent = "NEXT_TIME_IDENTIFIER"
+    
+    @IBOutlet weak var listViewController:ListViewController?
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
 //        FBLoginView.self
@@ -25,8 +27,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Setup user for local notifications
         
         let notificationActionWillDo = UIMutableUserNotificationAction()
-        notificationActionWillDo.identifier = notificationActionWillDoIdent
-        notificationActionWillDo.title = "Will Do"
+        notificationActionWillDo.identifier = notificationActionCompleteIdent
+        notificationActionWillDo.title = "Complete"
         notificationActionWillDo.destructive = false
         notificationActionWillDo.authenticationRequired = false
         notificationActionWillDo.activationMode = UIUserNotificationActivationMode.Background
@@ -54,8 +56,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             // User chose 'Next time', leave notification intact but don't notify for X minutes
             print("Chose next time")
         } else {
-            // User chose 'Will do', remove notification
-            print("Chose will do")
+            // User chose 'Complete', remove notification
+            ReminderClient.sharedClient().completeReminder(notification.userInfo!["reminderId"]! as! String)
         }
         
         completionHandler()

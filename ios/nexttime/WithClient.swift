@@ -58,4 +58,8 @@ class WithClient {
         let location = CLLocation.init(latitude: latitude, longitude: longitude)
         return location
     }
+    
+    func removeReminder(reminder: Reminder) {
+        reminders.removeAtIndex(reminders.indexOf(reminder)!)
+    }
 }

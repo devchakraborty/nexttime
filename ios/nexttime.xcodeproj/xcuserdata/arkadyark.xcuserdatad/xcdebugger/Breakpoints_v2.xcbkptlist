@@ -31,7 +31,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "37"
             endingLineNumber = "37"
-            landmarkName = "init(type:specifier:specifierId:reminderBody:)"
+            landmarkName = "init(type:specifier:reminderBody:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

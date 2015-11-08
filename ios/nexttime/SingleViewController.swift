@@ -104,7 +104,6 @@ class SingleViewController: UIViewController, MLPAutoCompleteTextFieldDelegate, 
         if updateId == nil {
             ReminderClient.sharedClient().addReminder(Reminder(type: newType, specifier: newSpecifier, reminderBody: newReminderBody))
         } else {
-            //TODO: Update reminder
             ReminderClient.sharedClient().updateReminder(updateId!, newType: newType, newSpecifier: newSpecifier, newReminderBody: newReminderBody)
         }
         self.navigationController?.popViewControllerAnimated(true)

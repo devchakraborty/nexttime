@@ -63,5 +63,9 @@ class NearClient {
             getClosestSearchResult(currentLocation, reminder: reminder, onReminderTriggered: onReminderTriggered)
         }
     }
+    
+    func removeReminder(reminder: Reminder) {
+        reminders.removeAtIndex(reminders.indexOf(reminder)!)
+    }
 }
     

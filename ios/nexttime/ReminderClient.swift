@@ -72,9 +72,20 @@ class ReminderClient: NSObject, CLLocationManagerDelegate{
         notification.alertAction = "Yes"
         notification.alertBody = "You are near " + reminder.specifier + ", " + reminder.reminderBody + "?"
         notification.category = "REMINDER_CATEGORY"
+        notification.userInfo = [NSObject : AnyObject]()
+        notification.userInfo!["reminderId"] = reminder.id
         
         notification.fireDate = NSDate(timeIntervalSinceNow: 5)
         
+//        let request = NSMutableURLRequest(URL: NSURL(string: "https://httpbin.org/get")!)
+//        print("Sending request")
+//        let response: AutoreleasingUnsafeMutablePointer<NSURLResponse?>=nil
+//        do {
+//            try print(NSURLConnection.sendSynchronousRequest(request, returningResponse: response))
+//        } catch {
+//            print("Chill")
+//        }
+//        
         UIApplication.sharedApplication().scheduleLocalNotification(notification)
     }
     
@@ -91,6 +102,18 @@ class ReminderClient: NSObject, CLLocationManagerDelegate{
         addReminder(newReminder)
         let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(newReminder, toFile: ReminderClient.ArchiveURL.path!)
         return isSuccessfulSave
+    }
+    
+    func completeReminder(idToRemove: String) {
+        for reminder in self.getAllReminders() {
+            if (reminder.id == idToRemove) {
+                if (reminder.type == "near") {
+                    nearClient.removeReminder(reminder)
+                } else {
+                    withClient.removeReminder(reminder)
+                }
+            }
+        }
     }
     
     func updateReminder(updateId: String, newType: String, newSpecifier: String, newReminderBody : String) {
