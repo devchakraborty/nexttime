@@ -35,6 +35,8 @@ class NearClient {
         
         let search = MKLocalSearch(request: searchRequest)
         
+                print("STARTING SEARCH")
+        
         search.startWithCompletionHandler({(response: Optional<MKLocalSearchResponse>,
             error: Optional<NSError>) in
             

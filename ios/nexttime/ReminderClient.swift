@@ -27,29 +27,50 @@ class ReminderClient: NSObject, CLLocationManagerDelegate{
         notifTimes = [String:NSDate]()
         
         super.init()
+        
+        locationManager = initLocationManager()
+        
+        locationManager!.startUpdatingLocation()
+        
         let reminders = NSKeyedUnarchiver.unarchiveObjectWithFile(ReminderClient.ArchiveURL.path!) as? [Reminder] ?? []
         
         for reminder in reminders {
             addReminder(reminder)
         }
+        
+    }
+    
+    func initLocationManager()->CLLocationManager{
+        let newLocationManager = CLLocationManager()
+        //newLocationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+        newLocationManager.distanceFilter = 500
+        newLocationManager.headingFilter = 5
+        let authStatus = CLLocationManager.authorizationStatus()
+
+        if(authStatus == CLAuthorizationStatus.NotDetermined){
+            newLocationManager.requestAlwaysAuthorization()
+        }
+        newLocationManager.delegate = self
+
+        return newLocationManager
     }
     
     static func sharedClient()->ReminderClient {
         return shared
     }
     
-    //    // MARK: Delegate functions
-    //    @objc func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-    //        let latestLocation = locations[locations.count-1]
-    //        // TODO: Send updated location to server
-    //
-    //        nearClient.checkReminders(latestLocation, onReminderTriggered : self.onReminderTriggered)
-    //    }
+        // MARK: Delegate functions
+        @objc func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+            let latestLocation = locations[locations.count-1]
+            // TODO: Send updated location to server
     
-    //    @objc func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
-    ////        manager.stopUpdatingLocation()
-    ////        manager.startUpdatingLocation()
-    //    }
+            nearClient.checkReminders(latestLocation, onReminderTriggered : self.onReminderTriggered)
+        }
+    
+        @objc func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
+            manager.stopUpdatingLocation()
+            manager.startUpdatingLocation()
+        }
     
     // MARK: Reminder managing functions
     
