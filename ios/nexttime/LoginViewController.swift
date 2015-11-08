@@ -12,19 +12,17 @@ import FBSDKShareKit
 import FBSDKCoreKit
 import FBSDKLoginKit
 
-class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
-    
-    @IBOutlet weak var loginButton: FBSDKLoginButton!
-    
+class LoginViewController: UIViewController {
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let loginButton = FBSDKLoginButton()
+        let loginButton = UIButton()
+        loginButton.backgroundColor = UIColor.darkGrayColor()
+        loginButton.frame = CGRectMake(0, 0, 180, 40)
         loginButton.center = self.view.center
-        loginButton.readPermissions = ["user_friends"]
+        loginButton.setTitle("Login with Facebook", forState: UIControlState.Normal)
+        loginButton.addTarget(self, action: "loginButtonClicked", forControlEvents: UIControlEvents.TouchUpInside)
         self.view.addSubview(loginButton)
-        
-        loginButton.delegate = self
     }
     
     override func didReceiveMemoryWarning() {
@@ -32,29 +30,43 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
         // Dispose of any resources that can be recreated.
     }
     
-    func loginButton(loginButton: FBSDKLoginButton!, didCompleteWithResult result: FBSDKLoginManagerLoginResult!, error: NSError!) {
-        if (error == nil) {
-            //TODO: Post to login
-            let request = FBSDKGraphRequest.init(graphPath: "me/friends",
-                parameters: nil,
-                HTTPMethod: "GET")
-            
-            request.startWithCompletionHandler({ (connection:FBSDKGraphRequestConnection!, result:AnyObject!, error:NSError!) -> Void in
-                if(error != nil){
+    func loginButtonClicked() {
+        let login: FBSDKLoginManager = FBSDKLoginManager()
+        let fromViewController = self
+        login.logInWithReadPermissions(["user_friends"], fromViewController: self,
+            handler: {(result: FBSDKLoginManagerLoginResult!, error:NSError!)-> Void in
+                if (error != nil) {
                     print(error)
-                }else{
-                    print(result)
+                }else if (result.isCancelled) {
+                    print("Couldn't log in")
+                } else {
+                    //TODO: Post to login
+                    let request = FBSDKGraphRequest.init(graphPath: "me/friends",
+                        parameters: nil,
+                        HTTPMethod: "GET")
+                    
+                    request.startWithCompletionHandler({ (connection:FBSDKGraphRequestConnection!, result:AnyObject!, error:NSError!) -> Void in
+                        if(error != nil){
+                            print(error)
+                        }else{
+                            print(result)
+                            fromViewController.moveToReminders(result)
+                        }
+                    })
                 }
-            })
-            
-            self.performSegueWithIdentifier("enterApp", sender: self)
+        })
+    }
+    
+    func moveToReminders(result: AnyObject!) {
+        var friendsList = [Friend]()
+        let data = result["data"] as? NSArray
+        for friend in data! {
+            let friendDict = friend as! NSDictionary
+            friendsList.append(Friend(id: friendDict["id"] as! String, name: friendDict["name"] as! String))
         }
+        FriendsDataSource.sharedDataSource().setFriendList(friendsList)
+        self.performSegueWithIdentifier("enterApp", sender: self)
     }
-    
-    func loginButtonDidLogOut(loginButton: FBSDKLoginButton!) {
-        print("Logged out")
-    }
-    
     
     
     /*

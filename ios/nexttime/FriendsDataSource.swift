@@ -14,6 +14,7 @@ import MapKit
 class FriendsDataSource:NSObject,MLPAutoCompleteTextFieldDataSource {
     
     var localSearch:MKLocalSearch?
+    var friends:[Friend] = []
     
     static let shared = FriendsDataSource()
     
@@ -21,7 +22,11 @@ class FriendsDataSource:NSObject,MLPAutoCompleteTextFieldDataSource {
         return shared
     }
     
+    func setFriendList(friends: [Friend]) {
+        self.friends = friends
+    }
+    
     func autoCompleteTextField(textField: MLPAutoCompleteTextField!, possibleCompletionsForString string: String!, completionHandler handler: (([AnyObject]!) -> Void)!) {
-        handler([Friend(id: "1234", firstName: "Dev", lastName: "Chakraborty")])
+        handler(friends)
     }
 }

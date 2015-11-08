@@ -38,13 +38,13 @@ class WithClient {
         findCloseFriends(currentLocation, onReminderTriggered: onReminderTriggered)
     }
     
-    func generateFriend(id: String, firstName: String, lastName: String) -> Friend {
+    func generateFriend(id: String, name: String) -> Friend {
         /* Generate Friend object given
         id : String
         firstName: String
         lastName: String
         */
-        let friend = Friend.init(id: id, firstName: firstName, lastName: lastName)
+        let friend = Friend.init(id: id, name: name)
         return friend
     }
     

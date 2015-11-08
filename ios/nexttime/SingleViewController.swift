@@ -69,7 +69,7 @@ class SingleViewController: UIViewController, MLPAutoCompleteTextFieldDelegate, 
     }
 
     func updateDoneButton() {
-        let isDone = (selectedFriend != nil || selectedPlace != nil) && reminderBodyView?.text != ""
+        let isDone = /*(selectedFriend != nil || selectedPlace != nil) && */reminderBodyView?.text != "" && specifierField!.text! != ""
         doneButton?.enabled = isDone
     }
     
