@@ -1,5 +1,5 @@
 //
-//  WithClient.swift
+//  NearClient.swift
 //  nexttime
 //
 //  Created by Arkady Arkhangorodsky on 2015-11-06.
@@ -8,10 +8,12 @@
 
 import UIKit
 import CoreLocation
-// import something for Parse
+import MapKit
 
-class WithClient {
+class NearClient {
     var reminders : [Reminder]
+    
+    let distanceThreshold = 500.0 // metres
     
     init() {
         reminders = [Reminder]()
@@ -21,19 +23,50 @@ class WithClient {
         reminders.append(reminder)
     }
     
-    func findCloseFriends(location: CLLocation, onReminderTriggered: (Reminder) -> Void) {
-        // IMPLEMENT
-        // search for location data (from Parse) for friends in your reminder list
-        // if they are close, activate reminder
-        for reminder in self.reminders {
-            if friend(reminder.specifier).distance < 100 {
-               onReminderTriggered(reminder)
+    func getClosestSearchResult(location: CLLocation, reminder: Reminder,
+            onReminderTriggered: (Reminder) -> Void) {
+        let searchRequest = MKLocalSearchRequest()
+        
+        let span = MKCoordinateSpanMake(0.05, 0.05)
+        let location2d = CLLocationCoordinate2DMake(location.coordinate.latitude, location.coordinate.longitude)
+        let searchRegion = MKCoordinateRegion(center: location2d, span: span)
+        
+        searchRequest.naturalLanguageQuery = reminder.specifier
+        searchRequest.region = searchRegion
+        
+        let search = MKLocalSearch(request: searchRequest)
+        
+        search.startWithCompletionHandler({(response: Optional<MKLocalSearchResponse>,
+            error: Optional<NSError>) in
+            
+            if error != nil {
+                print("Error occured in search: \(error!.localizedDescription)")
+            } else if response!.mapItems.count == 0 {
+                print("No matches found")
+            } else {
+                print("Matches found")
+                
+                for item in response!.mapItems {
+                    let itemLocation = item.placemark.location
+                    if (itemLocation?.distanceFromLocation(location) < self.distanceThreshold) {
+                        onReminderTriggered(reminder)
+                    }
+                }
             }
-        }
+        })
     }
     
     func checkReminders(currentLocation: CLLocation, onReminderTriggered: (Reminder) -> Void) {
-        // find which reminders should be activated (wrapper for findCloseFriends)
-        findCloseFriends(currentLocation, onReminderTriggered: onReminderTriggered)
+        // for each reminder in reminders,
+        //    Google Maps search for the reminder query (getting closest match)
+        //    See if within 100m, if so call onReminderTriggered
+        for reminder in reminders {
+            getClosestSearchResult(currentLocation, reminder: reminder, onReminderTriggered: onReminderTriggered)
+        }
+    }
+    
+    func removeReminder(reminder: Reminder) {
+        reminders.removeAtIndex(reminders.indexOf(reminder)!)
     }
 }
+    

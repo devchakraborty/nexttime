@@ -21,7 +21,7 @@ class ReminderClient: NSObject, CLLocationManagerDelegate{
     var locationManager: CLLocationManager?
     var facebookId: String?
     
-    var notifTimes : [String:NSDate]
+    var notifTimes : [String:NSDate]?
     
     override init() {
         nearClient = NearClient()
@@ -30,7 +30,6 @@ class ReminderClient: NSObject, CLLocationManagerDelegate{
         withClient = WithClient(onReminderTriggered : self.onReminderTriggered)
         locationManager = initLocationManager()
         locationManager!.startUpdatingLocation()
-        withClient = WithClient()
         notifTimes = [String:NSDate]()
         
         let reminders = NSKeyedUnarchiver.unarchiveObjectWithFile(ReminderClient.ArchiveURL.path!) as? [Reminder] ?? []
@@ -80,7 +79,7 @@ class ReminderClient: NSObject, CLLocationManagerDelegate{
         
         let now = NSDate()
         
-        if notifTimes[reminder.id] != nil && now.timeIntervalSinceDate((notifTimes[reminder.id])!) < 600 {
+        if notifTimes![reminder.id] != nil && now.timeIntervalSinceDate((notifTimes![reminder.id])!) < 600 {
             return
         }
         
@@ -102,7 +101,7 @@ class ReminderClient: NSObject, CLLocationManagerDelegate{
         //            print("Chill")
         //        }
         
-        notifTimes[reminder.id] = now
+        notifTimes![reminder.id] = now
         
         UIApplication.sharedApplication().scheduleLocalNotification(notification)
     }
