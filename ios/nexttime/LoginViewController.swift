@@ -40,7 +40,19 @@ class LoginViewController: UIViewController {
                 }else if (result.isCancelled) {
                     print("Couldn't log in")
                 } else {
-                    //TODO: Post to login
+                    let meRequest = FBSDKGraphRequest.init(graphPath: "me",
+                        parameters: nil,
+                        HTTPMethod: "GET")
+                    
+                    meRequest.startWithCompletionHandler({ (connection:FBSDKGraphRequestConnection!, result:AnyObject!, error:NSError!) -> Void in
+                        if(error != nil){
+                            print(error)
+                        }else{
+                            ReminderClient.sharedClient().facebookId = (result as! NSDictionary)["id"] as! String
+                        }
+                    })
+                    
+                    
                     let request = FBSDKGraphRequest.init(graphPath: "me/friends",
                         parameters: nil,
                         HTTPMethod: "GET")

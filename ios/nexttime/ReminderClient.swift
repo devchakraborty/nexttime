@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreLocation
+import Firebase
 
 class ReminderClient: NSObject, CLLocationManagerDelegate{
     static let DocumentsDirectory = NSFileManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask).first!
@@ -16,14 +17,15 @@ class ReminderClient: NSObject, CLLocationManagerDelegate{
     static let shared = ReminderClient()
     
     var nearClient: NearClient
-    var withClient: WithClient
+    var withClient: WithClient?
     var locationManager: CLLocationManager?
+    var facebookId: String?
     
     override init() {
         nearClient = NearClient()
-        withClient = WithClient()
         
         super.init()
+        withClient = WithClient(onReminderTriggered : self.onReminderTriggered)
         locationManager = initLocationManager()
         locationManager!.startUpdatingLocation()
         let reminders = NSKeyedUnarchiver.unarchiveObjectWithFile(ReminderClient.ArchiveURL.path!) as? [Reminder] ?? []
@@ -51,10 +53,14 @@ class ReminderClient: NSObject, CLLocationManagerDelegate{
     
     // MARK: Delegate functions
     @objc func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        let latestLocation = locations[locations.count-1]
-        // TODO: Send updated location to server
-        
-        nearClient.checkReminders(latestLocation, onReminderTriggered : self.onReminderTriggered)
+        if (facebookId != nil) {
+            let latestLocation = locations[locations.count-1]
+            // TODO: Send updated location to server
+            let firebaseRef = Firebase(url: "https://nexttime.firebaseio.com/locations/" + facebookId!)
+            firebaseRef.setValue(["lat": latestLocation.coordinate.latitude, "lng": latestLocation.coordinate.longitude])
+            withClient!.updateLocation(latestLocation)
+            nearClient.checkReminders(latestLocation, onReminderTriggered : self.onReminderTriggered)
+        }
     }
     
     @objc func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
@@ -94,7 +100,7 @@ class ReminderClient: NSObject, CLLocationManagerDelegate{
         if reminder.type == "near" {
             nearClient.addReminder(reminder)
         } else {
-            withClient.addReminder(reminder)
+            withClient!.addReminder(reminder)
         }
     }
     
@@ -111,7 +117,7 @@ class ReminderClient: NSObject, CLLocationManagerDelegate{
                 if (reminder.type == "near") {
                     nearClient.removeReminder(reminder)
                 } else {
-                    withClient.removeReminder(reminder)
+                    withClient!.removeReminder(reminder)
                 }
             }
         }
@@ -130,7 +136,7 @@ class ReminderClient: NSObject, CLLocationManagerDelegate{
     }
     
     func getAllReminders() -> [Reminder] {
-        return nearClient.reminders + withClient.reminders
+        return nearClient.reminders + withClient!.reminders
     }
     
     func getReminder(id:String) -> Reminder? {
