@@ -14,6 +14,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
+    let notificationActionWillDoIdent = "WILL_DO_IDENTIFIER"
+    let notificationActionNextTimeIdent = "NEXT_TIME_IDENTIFIER"
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
 //        FBLoginView.self
@@ -21,14 +23,53 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         // Setup user for local notifications
-    
-        // TODO: Set up badge , sound notifications
         
-        application.registerUserNotificationSettings(UIUserNotificationSettings(forTypes: UIUserNotificationType.Alert, categories: nil))
+        let notificationActionWillDo = UIMutableUserNotificationAction()
+        notificationActionWillDo.identifier = notificationActionWillDoIdent
+        notificationActionWillDo.title = "Will Do"
+        notificationActionWillDo.destructive = false
+        notificationActionWillDo.authenticationRequired = false
+        notificationActionWillDo.activationMode = UIUserNotificationActivationMode.Background
+        
+        let notificationActionNextTime = UIMutableUserNotificationAction()
+        notificationActionNextTime.identifier = notificationActionNextTimeIdent
+        notificationActionNextTime.title = "Next Time"
+        notificationActionNextTime.destructive = true
+        notificationActionNextTime.authenticationRequired = false
+        notificationActionNextTime.activationMode = UIUserNotificationActivationMode.Background
+        
+        let notificationCategory = UIMutableUserNotificationCategory()
+        notificationCategory.identifier = "REMINDER_CATEGORY"
+        notificationCategory.setActions([notificationActionNextTime, notificationActionWillDo],
+            forContext: UIUserNotificationActionContext.Minimal)
+        
+        application.registerUserNotificationSettings(UIUserNotificationSettings(forTypes: UIUserNotificationType.Alert,
+            categories: NSSet(array: [notificationCategory]) as! Set<UIUserNotificationCategory>))
             
         return true
     }
+    
+    func application(application: UIApplication, handleActionWithIdentifier identifier: String?, forLocalNotification notification: UILocalNotification, completionHandler: () -> Void) {
+        if (identifier == notificationActionNextTimeIdent) {
+            // User chose 'Next time', leave notification intact but don't notify for X minutes
+            print("Chose next time")
+        } else {
+            // User chose 'Will do', remove notification
+            print("Chose will do")
+        }
+        
+        completionHandler()
+    }
 
+    // For Remote Notifications
+    func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {
+        print("Got token data! \(deviceToken)")
+    }
+    
+    func application(application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: NSError) {
+        print("Couldn't register: \(error)")
+    }
+    
     func applicationWillResignActive(application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
@@ -52,6 +93,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Saves changes in the application's managed object context before the application terminates.
         self.saveContext()
     }
+    
 
     // MARK: - Core Data stack
 
