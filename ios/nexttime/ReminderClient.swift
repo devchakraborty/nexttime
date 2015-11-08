@@ -60,7 +60,6 @@ class ReminderClient: NSObject, CLLocationManagerDelegate{
     
     func updateFacebookId(facebookId : String) {
         self.facebookId = facebookId
-        self.withClient!.facebookId = facebookId
     }
     
     static func sharedClient()->ReminderClient {
@@ -123,6 +122,12 @@ class ReminderClient: NSObject, CLLocationManagerDelegate{
         if reminder.type == "near" {
             nearClient.addReminder(reminder)
         } else {
+            for friend in FriendsDataSource.sharedDataSource().friends {
+                if friend.name == reminder.specifier {
+                    // TODO - breaks if friends have the same name
+                    reminder.specifierId = friend.id
+                }
+            }
             withClient!.addReminder(reminder)
         }
     }
