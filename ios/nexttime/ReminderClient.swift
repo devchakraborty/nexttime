@@ -34,7 +34,9 @@ class ReminderClient: NSObject, CLLocationManagerDelegate{
     
     func initLocationManager()->CLLocationManager{
         let newLocationManager = CLLocationManager()
+        //newLocationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
         newLocationManager.distanceFilter = 500
+        newLocationManager.headingFilter = 5
         let authStatus = CLLocationManager.authorizationStatus()
         
         if(authStatus == CLAuthorizationStatus.NotDetermined){
@@ -55,11 +57,11 @@ class ReminderClient: NSObject, CLLocationManagerDelegate{
         // TODO: Send updated location to server
         
         nearClient.checkReminders(latestLocation, onReminderTriggered : self.onReminderTriggered)
+        print("CheckingReminders from location update")
     }
     
     @objc func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
         manager.stopUpdatingLocation()
-        manager.startUpdatingLocation()
     }
     
     // MARK: Reminder managing functions

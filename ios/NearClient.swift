@@ -49,6 +49,7 @@ class NearClient {
                     let itemLocation = item.placemark.location
                     if (itemLocation?.distanceFromLocation(location) < self.distanceThreshold) {
                         onReminderTriggered(reminder)
+                        break
                     }
                 }
             }
