@@ -13,40 +13,31 @@ class Friend: NSObject, NSCoding, MLPAutoCompletionObject {
     // MARK: Properties
     
     var id:String
-    var firstName:String
-    var lastName:String
+    var name:String
     
     struct PropertyKey {
         static let id = "friendId"
-        static let firstName = "firstName"
-        static let lastName = "lastName"
+        static let name = "name"
     }
     
     // MARK: Initialization
-    init(id:String, firstName:String, lastName:String) {
+    init(id:String, name:String) {
         self.id = id
-        self.firstName = firstName
-        self.lastName = lastName
+        self.name = name
     }
     
     required convenience init(coder aDecoder: NSCoder) {
         let id = aDecoder.decodeObjectForKey(PropertyKey.id) as! String
-        let firstName = aDecoder.decodeObjectForKey(PropertyKey.firstName) as! String
-        let lastName = aDecoder.decodeObjectForKey(PropertyKey.lastName) as! String
-        self.init(id:id, firstName: firstName, lastName: lastName)
+        let name = aDecoder.decodeObjectForKey(PropertyKey.name) as! String
+        self.init(id:id, name: name)
     }
     
     func encodeWithCoder(aCoder: NSCoder) {
         aCoder.encodeObject(id, forKey: PropertyKey.id)
-        aCoder.encodeObject(firstName, forKey: PropertyKey.firstName)
-        aCoder.encodeObject(lastName, forKey: PropertyKey.lastName)
-    }
-    
-    func fullName() -> String {
-        return firstName + " " + lastName
+        aCoder.encodeObject(name, forKey: PropertyKey.name)
     }
     
     func autocompleteString() -> String! {
-        return self.fullName()
+        return self.name
     }
 }

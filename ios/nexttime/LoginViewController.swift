@@ -13,8 +13,7 @@ import FBSDKCoreKit
 import FBSDKLoginKit
 
 class LoginViewController: UIViewController {
-    
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         let loginButton = UIButton()
@@ -51,14 +50,21 @@ class LoginViewController: UIViewController {
                             print(error)
                         }else{
                             print(result)
-                            fromViewController.moveToReminders()
+                            fromViewController.moveToReminders(result)
                         }
                     })
                 }
         })
     }
     
-    func moveToReminders() {
+    func moveToReminders(result: AnyObject!) {
+        var friendsList = [Friend]()
+        let data = result["data"] as? NSArray
+        for friend in data! {
+            let friendDict = friend as! NSDictionary
+            friendsList.append(Friend(id: friendDict["id"] as! String, name: friendDict["name"] as! String))
+        }
+        FriendsDataSource.sharedDataSource().setFriendList(friendsList)
         self.performSegueWithIdentifier("enterApp", sender: self)
     }
     
