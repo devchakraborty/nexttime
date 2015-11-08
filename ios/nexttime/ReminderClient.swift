@@ -73,7 +73,7 @@ class ReminderClient: NSObject, CLLocationManagerDelegate{
                 let latestLocation = locations[locations.count-1]
                 // TODO: Send updated location to server
                 let firebaseRef = Firebase(url: "https://nexttime.firebaseio.com/locations/" + facebookId!)
-                firebaseRef.setValue(["lat": latestLocation.coordinate.latitude, "lng": latestLocation.coordinate.longitude])
+                firebaseRef.setValue(["location":["lat": latestLocation.coordinate.latitude, "lng": latestLocation.coordinate.longitude]])
                 withClient!.updateLocation(latestLocation)
                 nearClient.checkReminders(latestLocation, onReminderTriggered : self.onReminderTriggered)
             }
